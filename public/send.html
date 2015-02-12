@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta charset="UTF-8">
+  <title>Counter sender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a id="send" style="display: block;
+width: 10em;
+height: 10em;
+margin: auto;
+background: rgb(17, 131, 153);
+text-align: center;
+font-size: 2em;
+line-height: 10em;
+color: white;
+border-radius: 50%;
+margin-top: 20%;">CLICK ME</a>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  $(function() {
+	var socket = io();
+	socket.on('connect', function(){
+	    var sessionid = socket.io.engine.id;
+	    socket.emit('add user',sessionid);
+	    
+	    $('#send').click(function(){
+		socket.emit('new message', 'hi');
+	    });
+	
+	});
+	
+	
+  });
+  </script>
+</body>
+</html>
