@@ -26,125 +26,37 @@ html, body {
   padding: 0;
 }
 
-ul {
-  list-style: none;
-  word-wrap: break-word;
+body{
+    background: rgb(2,0,0); /* Old browsers */  background: -moz-linear-gradient(top,  rgba(2,0,0,1) 21%, rgba(1,86,142,1) 100%); /* FF3.6+ */  background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,rgba(2,0,0,1)), color-stop(100%,rgba(1,86,142,1))); /* Chrome,Safari4+ */  background: -webkit-linear-gradient(top,  rgba(2,0,0,1) 21%,rgba(1,86,142,1) 100%); /* Chrome10+,Safari5.1+ */  background: -o-linear-gradient(top,  rgba(2,0,0,1) 21%,rgba(1,86,142,1) 100%); /* Opera 11.10+ */  background: -ms-linear-gradient(top,  rgba(2,0,0,1) 21%,rgba(1,86,142,1) 100%); /* IE10+ */  background: linear-gradient(to bottom,  rgba(2,0,0,1) 21%,rgba(1,86,142,1) 100%); /* W3C */  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020000', endColorstr='#01568e',GradientType=0 ); /* IE6-9 */;
 }
 
-/* Pages */
+.start{
+    -webkit-filter:hue-rotate(260deg);
+    filter:hue-rotate(260deg);
+    background: #F94545;
+    background: -moz-linear-gradient(top, #F94545 0%, #CA2F2F 15%, #ff5c5c 73%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F94545), color-stop(15%,#CA2F2F), color-stop(73%,#ff5c5c));
+    background: -webkit-linear-gradient(top, #F94545 0%,#CA2F2F 15%,#ff5c5c 73%);
+    background: -o-linear-gradient(top, #F94545 0%,#CA2F2F 15%,#ff5c5c 73%);
+    background: -ms-linear-gradient(top, #F94545 0%,#CA2F2F 15%,#ff5c5c 73%);
+    background: linear-gradient(to bottom, #F94545 0%,#CA2F2F 15%,#FF5CA0 73%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F94545', endColorstr='#ff5c5c',GradientType=0 ); /* IE6-9 */
 
-.pages {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
 }
 
-.page {
-  height: 100%;
-  position: absolute;
-  width: 100%;
+.rotating10s {
+    -webkit-animation: rotating 10s linear infinite;
 }
 
-/* Login Page */
-
-.login.page {
-  background-color: #000;
+.rotating2s {
+    -webkit-animation: rotating 2s linear infinite;
 }
 
-.login.page .form {
-  height: 100px;
-  margin-top: -100px;
-  position: absolute;
-
-  text-align: center;
-  top: 50%;
-  width: 100%;
-}
-
-.login.page .form .usernameInput {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #fff;
-  outline: none;
-  padding-bottom: 15px;
-  text-align: center;
-  width: 400px;
-}
-
-.login.page .title {
-  font-size: 200%;
-}
-
-.login.page .usernameInput {
-  font-size: 200%;
-  letter-spacing: 3px;
-}
-
-.login.page .title, .login.page .usernameInput {
-  color: #fff;
-  font-weight: 100;
-}
-
-/* Chat page */
-
-.chat.page {
-  display: none;
-}
-
-/* Font */
-
-.messages {
-  font-size: 150%;
-}
-
-.inputMessage {
-  font-size: 100%;
-}
-
-.log {
-  color: gray;
-  font-size: 70%;
-  margin: 5px;
-  text-align: center;
-}
-
-/* Messages */
-
-.chatArea {
-  height: 100%;
-  padding-bottom: 60px;
-}
-
-.messages {
-  height: 100%;
-  margin: 0;
-  overflow-y: scroll;
-  padding: 10px 20px 10px 20px;
-}
-
-.message.typing .messageBody {
-  color: gray;
-}
-
-.username {
-  float: left;
-  font-weight: 700;
-  overflow: hidden;
-  padding-right: 15px;
-  text-align: right;
-}
-
-/* Input */
-
-.inputMessage {
-  border: 10px solid #000;
-  bottom: 0;
-  height: 60px;
-  left: 0;
-  outline: none;
-  padding-left: 10px;
-  position: absolute;
-  right: 0;
-  width: 100%;
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
 }
