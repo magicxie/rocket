@@ -1,47 +1,198 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE HTML>
+<html class="style0">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <meta charset="UTF-8">
-  <title>Counter</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="x5-orientation" content="portrait"/>
+    <title></title>
+    <script>
+        var screenWidh=document.documentElement.offsetWidth,screenHeight=window.screen.height/window.screen.width*screenWidh;
+        document.write('<style>@media only screen and (width: '+screenWidh+'px) {html{font-size: '+200/640*screenWidh+'px;}}@media only screen and (width: '+screenHeight+'px) {html{font-size: '+200/640*screenHeight+'px;}}<\/style>');
+    </script>
+    <link href="style.css" rel="stylesheet"/>
 </head>
-<body>
-<h1 id="userCount">0<h1>
-  <a id="send" style="display: block;
-width: 10em;
-height: 10em;
-margin: auto;
-background: rgb(117, 131, 153);
-text-align: center;
-font-size: 2em;
-line-height: 10em;
-color: white;
-border-radius: 50%;;">0</a>
+<body id="body0">
+<div id="anim">
+    <div id="stars" style="width: 100%;height: 100%;"></div>
+    <div id="count" class="clickCount"></div>
+    <div class="huojian" style="top: 30%;left: 55%;">
+        <div class="jian" style="width: 50%;"></div>
+        <div class="huo1" style="width: 50%;"></div>
+        <div class="huo2" style="width: 50%;"></div>
+    </div>
+    <div id="yuan">
+        <div class="huo-layer"><div class="huo"><div class="huo-bian"></div></div></div>
+        <div id="yuan3" >
+            <div class="chilun" data-role="touch"></div>
+        </div>
+        <div id="baibg" data-role="touch"></div>
+
+    </div>
+    <div class="yuan2"></div>
+</div>
 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+    <script src="Three.js"></script>
   <script>
+  var step = 0;
   $(function() {
 	var socket = io();
 	socket.on('connect', function(){
-	    var sessionid = socket.io.engine.id;
-	    socket.emit('add user',sessionid);
-	    
-	    //socket.emit('new message', 'hi');
-	
-	});
-	socket.on('new message', function (data) {
-	    $('#send').text($('#send').text()*1+1);
-	});
-	
-	socket.on('user joined', function (data) {
-	    $('#userCount').text(data.numUsers);
-	});
+	    socket.emit('add user','screen');
+        socket.emit('set click',50);
+        socket.on('get click', toEmitRocket);
+        socket.on('user click', toEmitRocket);
+    });
 	socket.on('user left', function (data) {
 	    $('#userCount').text(data.numUsers);
 	});
+
+  function toEmitRocket(data){
+      $('#count').text(data.totalClicks);
+      if(data.emitRocket){
+          document.getElementById('body0').className = 'anim3';
+      };
+      if(step <= 15) {
+          step = data.totalClicks > 100 ? (data.totalClicks - 100) / 10 : 0;
+      }
+  }
+
+    // the main three.js components
+    var camera, scene, renderer,
+
+    // to keep track of the mouse position
+            mouseX = 0, mouseY = 0,
+
+    // an array to store our particles in
+            particles = [];
+
+    // let's get going!
+    init();
+
+    function init() {
+
+        // Camera params :
+        // field of view, aspect ratio for render output, near and far clipping plane.
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 2000, 20000 );
+
+        // move the camera backwards so we can see stuff!
+        // default position is 0,0,0.
+        camera.position.z = 5000;
+        camera.position.y = 2000;
+
+        // the scene contains all the 3D object data
+        scene = new THREE.Scene();
+
+        // camera needs to go in the scene
+        scene.add(camera);
+
+        renderer = new THREE.CanvasRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+        // the renderer's canvas domElement is added to the body
+        document.getElementById('stars').appendChild( renderer.domElement );
+
+        makeParticles();
+
+        // add the mouse move listener
+        document.addEventListener( 'mousemove', onMouseMove, false );
+
+        // render 30 times a second (should also look
+        // at requestAnimationFrame)
+        setInterval(update,1000/30);
+
+    }
+
+    // the main update function, called 30 times a second
+
+    function update() {
+
+        updateParticles();
+
+        // and render the scene from the perspective of the camera
+        renderer.render( scene, camera );
+
+    }
+
+    // creates a random field of Particle objects
+
+    function makeParticles() {
+
+        var particle, material;
+
+        // we're gonna move from z position -1000 (far away)
+        // to 1000 (where the camera is) and add a random particle at every pos.
+        for ( var zpos= 000; zpos < 1000; zpos+=10 ) {
+
+            // we make a particle material and pass through the
+            // colour and custom particle render function we defined.
+            material = new THREE.ParticleCanvasMaterial( { color: 0xffffff, program: particleRender } );
+            // make the particle
+            particle = new THREE.Particle(material);
+
+            // give it a random x and y position between -500 and 500
+            particle.position.x = Math.random() * 4000 - 2000;
+            particle.position.y = Math.random() * 4000 - 2000;
+
+            // set its z position
+            particle.position.z = zpos;
+
+            // scale it up a bit
+            particle.scale.x = particle.scale.y = 4;
+
+            // add it to the scene
+            scene.add( particle );
+
+            // and to the array of particles.
+            particles.push(particle);
+        }
+
+    }
+
+    // there isn't a built in circle particle renderer
+    // so we have to define our own.
+
+    function particleRender( context ) {
+
+        // we get passed a reference to the canvas context
+        context.beginPath();
+        // and we just have to draw our shape at 0,0 - in this
+        // case an arc from 0 to 2Pi radians or 360º - a full circle!
+        context.arc( 0, 0, 1, 0,  Math.PI * 2, true );
+        context.fill();
+    };
+
+
+    // moves all the particles dependent on mouse position
+    function updateParticles() {
+
+        // iterate through every particle
+        for(var i=0; i<particles.length; i++) {
+
+            particle = particles[i];
+
+            // and move it forward dependent on the mouseY position.
+            particle.position.z +=  50*step;
+            particle.position.y -=  20*step;
+            // if the particle is too close move it to the back
+            if(particle.position.z>2000) particle.position.z=0;
+            if(particle.position.y<500) particle.position.y+=3000;
+
+        }
+
+    }
+
+    // called when the mouse moves
+    function onMouseMove( event ) {
+        // store the mouseX and mouseY position
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    }
+
   });
   </script>
-</body>
+ </body>
 </html>
