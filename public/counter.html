@@ -41,7 +41,7 @@
   $(function() {
 	var socket = io();
 	socket.on('connect', function(){
-	    socket.emit('add user','screen');
+	socket.emit('add user','screen');
         socket.emit('set click',50);
         socket.on('get click', toEmitRocket);
         socket.on('user click', toEmitRocket);

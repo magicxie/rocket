@@ -46,6 +46,16 @@ io.on('connection', function (socket) {
         });
     });
 
+    socket.on('slide', function (cmd) {
+	
+        socket.broadcast.emit('slide control', {
+            cmd: cmd
+        });
+	
+	console.log(cmd);
+	
+    });
+    
     socket.on('send', function (username) {
 
         console.log('user',username,'click');
