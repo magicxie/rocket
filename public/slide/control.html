@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta charset="UTF-8">
+  <title>Silde control</title>
+  <style>.control{height:40%;width:80%;margin:auto;text-align:center;font-size: 5em;}</style>
+</head>
+<body style="overflow: hidden">
+<div data-cmd="prev" class="control" >PREV</div>
+<div data-cmd="next" class="control" >NEXT</div>
+<script src="js/jquery.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    $(function() {
+        var socket = io();
+	
+	$('.control').click(function(){
+	
+		socket.emit('silde', $(this).data('cmd'));
+	
+	});
+
+    });
+</script>
+
+</body>
+</html>
