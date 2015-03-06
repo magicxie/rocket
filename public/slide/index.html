@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="impress">
+		<div id="first" class="step slide">
+	        <img src="css/images/h5.jpg" alt="">
+	        <q>深入浅出H5的应用场景</q>
+	    </div>
+		<div class="step slide">
+			<h2>大家眼中的H5</h2>
+            <table style="margin-top:20%;">
+                <thead>
+                    <tr>
+                        <th>前台</th>
+                        <th>产品</th>
+                        <th>客户端</th>
+                        <th>后台</th>
+                        <th>运营</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img style="width: 5em;" src="css/images/lan.jpg" alt=""></td>
+                        <td><img style="width: 5em;" src="css/images/4wd.jpg" alt=""></td>
+                        <td><img style="width: 5em;" src="css/images/san.jpg" alt=""></td>
+                        <td><img style="width: 5em;" src="css/images/toy.jpg" alt=""></td>
+                        <td><img style="width: 5em;" src="css/images/ip.jpg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	    <div class="step slide">
+	        <h2>广义上</h2>
+	        <div class="center">
+	        	<img src="css/images/def.png" alt="">
+	        	<i></i>
+	        </div>
+	    </div>
+	    <div class="step slide">
+	        <h2>功能列表 - html5</h2>
+	        <h3>语义化标签</h3>
+	        <img src="css/images/layout.jpg" alt="">
+	        <h3>功能标签</h3>
+	        <ul class="tag-list">
+	        	<li>&lt;audio&gt;</li>
+	        	<li>&lt;canvas&gt;</li>
+	        	<li>&lt;video&gt;</li>
+	        </ul>
+	    </div>
+	    <div class="step slide">
+	        <h2>功能列表 - css3</h2>
+	        <h3>选择器</h3>
+	        <h3>@Font-face web font文字渲染：实现<a href="https://icomoon.io/app/#/select">图标字体</a></h3>
+	        <h3>多列布局</h3>
+			<h3>边框和颜色、圆角</h3>
+	        <h3>渐变效果</h3>
+	        <h3>阴影和反射</h3>
+	        <h3>背景效果</h3>
+	        <h3>盒子模型</h3>
+            <h3>响应式布局</h3>
+	        <h3>Transitions, Transforms 和 Animation</h3>
+	        <img src="css/images/css-a.png" alt="">
+	    </div>
+	    <div class="step slide">
+	        <h2>功能列表 - javascript</h2>
+	        <ol>
+                <li>WebSocket：实时通信&长连接</li>
+                <li>WebGL：3d效果</li>
+                <li>Local storage和web sql：离线缓存</li>
+                <li>File Api:读写本地文件</li>
+                <li>js sdk：获得原生应用的能力</li>
+	        </ol>
+	    </div>
+	    <div class="step slide">
+	        <h2>photowall<small>离线存储 + 本地存储 + 图片处理 + 实时通信 + 响应式布局应用</small></h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>年会小火箭<small>实时通信+css3动画+自定义字体</small></h2>
+		<a id="reloadRocketFrame" style="cursor: pointer">刷新</a>
+            <iframe style="width: 100%;height: 85%;" id="rocketFrame" src="http://cloud.eggcanfly.net:3000/counter.html"></iframe>
+	    </div>
+	    <div class="step slide">
+	        <h2>图表应用<small>画图+3D效果</small></h2>
+		 <a id="to2D" style="cursor: pointer" class="chart" data-href="http://echarts.baidu.com/doc/example/map15.html">2D</a>
+		 <a id="to3D" style="cursor: pointer" class="chart" data-href="http://echarts.baidu.com/x/doc/example/map3d_population3.html">3D</a>
+		<iframe  style="width: 100%;height: 85%;" id="chartFrame" src="http://echarts.baidu.com/doc/example/map15.html"></iframe>
+	    </div>
+	    <div class="step slide">
+	        <h2>小游戏<small>bb</small></h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>涂鸦<small>bb</small></h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>即时聊天<small>tom</small></h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>？？<small>tom</small></h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>H5能力扩展 - app自带webview提供能力</h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>H5给设计师带来的改变</h2>
+	    </div>
+	    <div class="step slide">
+	        <h2>未来</h2>
+	        <div class="center">
+	        	<img src="css/images/html5-native1.jpg" alt="">
+	        	<i></i>
+	        </div>
+	    </div>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/impress.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var page = $('#impress').children('.slide');
+		var firstX = -1000;
+		page.each(function(i,n){
+			$(n).attr({
+				'data-x': firstX + i * 1000,
+				'data-y': '-1500'
+			});;
+		})
+		impress().init();
+
+		$('#reloadRocketFrame').click(function(){
+		    $('#rocketFrame').attr('src', $('#rocketFrame').attr('src'));
+		});
+		$('.chart').click(function(){
+		    $('#chartFrame').attr('src', $(this).data('href'));
+		});
+		
+		var socket = io();
+		socket.on('slide control',function(data){
+			impress()[data.cmd].call();
+		});
+	</script>
+</body>
+</html>
