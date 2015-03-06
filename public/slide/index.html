@@ -138,9 +138,8 @@
 		});
 		
 		var socket = io();
-		
 		socket.on('slide control',function(data){
-			impress()[data.cmd].call()
+			impress()[data.cmd].call();
 		});
 	</script>
 </body>

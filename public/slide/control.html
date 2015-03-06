@@ -14,12 +14,14 @@
 <script>
     $(function() {
         var socket = io();
-	
+
 	$('.control').click(function(){
 	
-		socket.emit('silde', $(this).data('cmd'));
-	
+		socket.emit('slide', $(this).data('cmd'));
+		console.log('cmd');
 	});
+	
+
 
     });
 </script>
