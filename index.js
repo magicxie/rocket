@@ -17,6 +17,8 @@ app.use(express.static(__dirname + '/public'));
 // usernames which are currently connected to the chat
 var usernames = {};
 var numUsers = 0;
+var totalClicks = 0;
+var threadHold = 100;
 
 io.on('connection', function (socket) {
   var addedUser = false;
@@ -29,11 +31,48 @@ io.on('connection', function (socket) {
       message: data
     });
   });
+    socket.emit('get click', {
+        username: socket.username,
+        totalClicks: totalClicks,
+        emitRocket : totalClicks > threadHold
+    });
+
+    socket.on('set click', function (clicks) {
+        totalClicks  =  clicks;
+        socket.broadcast.emit('user click', {
+            username: socket.username,
+            totalClicks: totalClicks,
+            emitRocket : totalClicks > threadHold
+        });
+    });
+
+    socket.on('send', function (username) {
+
+        console.log('user',username,'click');
+
+        ++totalClicks;
+
+        console.log('total clicks',totalClicks);
+
+        socket.emit('user click', {
+            username: socket.username,
+            totalClicks: totalClicks,
+            emitRocket : totalClicks > threadHold
+        });
+
+        socket.broadcast.emit('user click', {
+            username: socket.username,
+            totalClicks: totalClicks,
+            emitRocket : totalClicks > threadHold
+        });
+
+    });
 
   // when the client emits 'add user', this listens and executes
   socket.on('add user', function (username) {
     // we store the username in the socket session for this client
     socket.username = username;
+      console.log('user',username,'joied');
     // add the client's username to the global list
     usernames[username] = username;
     ++numUsers;

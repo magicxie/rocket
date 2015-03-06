@@ -3,39 +3,82 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <meta charset="UTF-8">
-  <title>Counter sender</title>
+  <title>Counter clier</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <a id="send" style="display: block;
-width: 10em;
-height: 10em;
-margin: auto;
-background: rgb(17, 131, 153);
-text-align: center;
-font-size: 2em;
-line-height: 10em;
-color: white;
-border-radius: 50%;
-margin-top: 20%;">CLICK ME</a>
+<body style="overflow: hidden">
 
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-  $(function() {
-	var socket = io();
-	socket.on('connect', function(){
-	    var sessionid = socket.io.engine.id;
-	    socket.emit('add user',sessionid);
-	    
-	    $('#send').click(function(){
-		socket.emit('new message', 'hi');
-	    });
-	
-	});
-	
-	
-  });
-  </script>
+<div id="cli" style="display: none;
+    margin: auto;
+    margin-top: 40%;
+    text-align: center;
+    color: white;
+    position: relative;background:url('stars.png') repeat-x;">
+    <!--<img src="img_human.png" style="z-index: 10;
+width: 70%;
+height: 70%;
+position: absolute;
+left: 15%;
+top: 15%;" class="rotating10s">
+    <img src="path_stat_2.png" style="
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;" class="rotating2s">
+-->
+    <a style="z-index: 20;
+height: 80%;
+width: 80%;
+display: block;
+position: absolute;
+top: 10%;
+left: 10%;
+border-radius: 50%;
+border: 2px solid #900202;
+box-shadow: 0px 0px 10px #FF2D2D;" class="start" id="send"></a>
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    $(function() {
+        var socket = io();
+        socket.on('connect', function(){
+            var sessionid = socket.io.engine.id;
+            socket.emit('add user',sessionid);
+
+            var deg = 260;
+
+            $('#send').click(function(){
+
+                if(deg != 360){
+                    deg += 10;
+                }
+                var hr = 'hue-rotate('+ deg +'deg)';
+
+                $('#send').css('-webkit-filter',hr).css('filter',hr);
+
+                socket.emit('new message', 'hi');
+            });
+
+        });
+        if(devicePixelRatio == undefined){
+            devicePixelRatio = 1;
+        }
+        var shortOne = screen.availHeight > screen.availWidth ?   screen.availWidth :  screen.availHeight;
+        shortOne = shortOne / devicePixelRatio;
+
+        function show(){
+
+        };
+
+        $('#cli').hide()
+                .css('width',shortOne*0.7)
+                .css('height',shortOne*0.7)
+                .css('margin-top',(screen.availHeight/devicePixelRatio-shortOne*0.7)/3)
+                .click().show();
+
+    });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML>
+<html class="style0">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="x5-orientation" content="portrait"/>
+<title></title>
+<script>
+    var screenWidh=document.documentElement.offsetWidth,screenHeight=window.screen.height/window.screen.width*screenWidh;
+    document.write('<style>@media only screen and (width: '+screenWidh+'px) {html{font-size: '+200/640*screenWidh+'px;}}@media only screen and (width: '+screenHeight+'px) {html{font-size: '+200/640*screenHeight+'px;}}<\/style>');
+</script>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body id="body0" class="anim1 anim2">
+<div id="anim">
+    <div class="feiji">
+        <div class="feijihidden"></div>
+    </div>
+    <div class="mam"></div>
+    <div class="txt1"></div>
+    <div class="txt2"></div>
+    <div class="huojian">
+        <div class="jian"></div>
+        <div class="huo1"></div>
+        <div class="huo2"></div>
+        <div class="liuxing"></div>
+    </div>
+    <div id="yuan">
+        <div class="huo-layer"><div class="huo"><div class="huo-bian"></div></div></div>
+        <div id="yuan3" >
+            <div class="chilun" data-role="touch"></div>
+        </div>
+        <div id="baibg" data-role="touch"></div>
+
+    </div>
+    <div class="yuan2"></div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+    var socket = io();
+    var $body=document.body,
+            $yuan=document.getElementById('yuan');
+
+    var clicks = 0;
+    var reconnect = false;
+
+    socket.on('reconnect',function(){
+        reconnect = true;
+    });
+
+    socket.on('connect', function(){
+        if(!reconnect) {
+            bindEvent();
+        }
+    });
+
+    socket.on('user click', function (data) {
+
+        if(data.emitRocket){
+            document.getElementById('body0').className = 'anim3';
+        };
+    });
+
+    function bindEvent(){
+
+        $body.addEventListener('touchstart',function(e){
+
+            var target = e.target,
+                    roleVal = target.getAttribute('data-role');
+            if(roleVal=='touch'){
+                document.getElementById('yuan3').setAttribute("style","opacity:"+clicks/20) ;
+                clicks++;
+                if(clicks == 20){
+                    document.getElementsByClassName('chilun')[0].setAttribute("style","opacity:1;") ;
+                }
+                var sessionid = socket.io.engine.id;
+                socket.emit('send',sessionid);
+            }
+        },false);
+
+        $body.addEventListener('touchend',function(e){
+            var target = e.target,
+                    roleVal = target.getAttribute('data-role');
+            if(roleVal=='touch'){
+                $yuan.className=''
+            }
+
+        },false);
+    }
+
+</script>
+</body>
+</html>
