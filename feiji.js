@@ -1,23 +1,23 @@
 /*var http = require('http'); 
-http.createServer(function (req, res) { 
-	res.writeHead(200, {'Content-Type': 'text/html'}); 
-   // var fs = require('fs');
-	//var file = fs.readFileSync('e:\aaa.html', "utf8");
-	res.end('hello'); 
-}).listen(8080, "127.0.0.1"); */
+ http.createServer(function (req, res) {
+ res.writeHead(200, {'Content-Type': 'text/html'});
+ // var fs = require('fs');
+ //var file = fs.readFileSync('e:\aaa.html', "utf8");
+ res.end('hello');
+ }).listen(8080, "127.0.0.1"); */
 
 
 
 var fs = require('fs')
 	, http = require('http')
 	, socketio = require('./node_modules/socket.io');
-  
+
 var server = http.createServer(function(req, res) {
 	res.writeHead(200, { 'Content-type': 'text/html'});
-   // res.end(fs.readFileSync(__dirname + '/index.html'));
+	// res.end(fs.readFileSync(__dirname + '/index.html'));
 	res.end('hello');
 }).listen(3001, function() {
-	
+
 });
 
 
@@ -26,7 +26,7 @@ var list=[],
 
 isConnection=0;
 socketio.listen(server).on('connection', function (socket) {
-	
+
 	socket.on('usermsg', function (msg) {
 		socket.xy=msg;
 		socket.friend && socket.friend.emit('serverMsg', msg);
@@ -38,7 +38,7 @@ socketio.listen(server).on('connection', function (socket) {
 		if(socket.friend){
 			socket.friend.emit('serverdie', msg);
 			socket.friend.friend=null;
-			
+
 			list.push(socket.friend);
 			socket.friend=null;
 		}else{
@@ -94,16 +94,16 @@ socketio.listen(server).on('connection', function (socket) {
 	if(isConnection){return;}
 
 	isConnection=1;
-	
+
 	var dijiT=1000*60/20,
 		oldT=new Date().getTime(),
 		jiange=0,
 		Ntime;
-	
 
 
-		//console.log(jiange);
-var ggg=0;
+
+	//console.log(jiange);
+	var ggg=0;
 	setInterval(function(){
 		//console.log(new Date().getTime());
 		Ntime=new Date().getTime();
