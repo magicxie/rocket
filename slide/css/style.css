@@ -271,5 +271,49 @@ h3{
 
 
 /*tom*/
+.chat{
+    
+}
+.chat.chat-1{
+    
+}
+.chat.chat-1 .content-right{
+    float: right;
+    width: 400px;
+}
+.chat.chat-1 .content-right p{
+    font-size: 22px;
+    margin-top: 20px;
+    
+}
+.chat.chat-1 .content-right ul{
+    list-style-type: disc;
+    padding-left: 30px;
+    font-size: 22px;
+}
 
+.chat.chat-2 .content p{
+    text-align: center;
+}
+
+.chat.chat-2 .content img{
+    max-width: 250px;
+    margin-right: 50px;
+}
+.chat.chat-3 .content p{
+   font-size: 22px;
+   margin-top: 20px;
+}
+.chat.chat-3 .content ul{
+    list-style-type: disc;
+    padding-left: 30px;
+    font-size: 22px;
+}
+.chat.chat-3 .content li{
+    margin: 10px 0px;
+}
+.chat.chat-3 .content p img{
+   max-width: 150px;
+   margin-right: 5px;
+}
 /*tom*/
