@@ -1,0 +1,14 @@
+<div class="container-fluid">
+	<div class="row">
+		{{#each photos}}
+		<div class="col-xs-6 col-sm-3 col-md-2 placeholder" photoid="{{id}}">
+			<img src="{{name}}" alt="" class="img-responsive">
+		</div>
+		{{/each}}
+	</div>
+</div>
+<script src="javascripts/socket.io.js?40a27951"></script>
+<script src="javascripts/masonry.pkgd.js?c9e4cb76"></script>
+<script src="javascripts/imagesloaded.pkgd.js?71a6605a"></script>
+<script src="javascripts/slide.js?01cdb461"></script>
+<script src="javascripts/index.js?3cbc4431"></script>
