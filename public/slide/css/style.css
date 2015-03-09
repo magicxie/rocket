@@ -263,9 +263,10 @@ h3{
 /*magic*/
 
 
-
 /*bb*/
-
+.zhongli .img{width:50%;display:inline-block; text-align:center; }
+.zhongli img{ display:block; margin:0 auto; }
+.binbinfs{font-size:28px; line-height:2; margin-top:20px;}
 /*bb*/
 
 
