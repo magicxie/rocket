@@ -462,11 +462,10 @@ $(function(){
 					canvasSize = Math.floor(Math.sqrt(Math.pow(newWidth,2) + Math.pow(newHeight,2))),
 					pos = canvasSize / 2;
 
-				// alert(oldWidth + '---' + '--' + scale + '--' + newWidth + '--' + newHeight +  canvasSize + '-----'  + pos);
 		        canvas.width = canvasSize;
 		        canvas.height = canvasSize;
-		        ctx.fillStyle = 'rgba(255,255,255,0)';
-		        ctx.fillRect(0,0,canvasSize,canvasSize);
+		        // ctx.fillStyle = 'rgba(255,255,255,0)';
+		        // ctx.fillRect(0,0,canvasSize,canvasSize);
 
 		        ctx.translate(pos,pos);
 

@@ -39,7 +39,9 @@ router.post('/', function(req, res) {
 				if(err) throw err;
 				
 				gm(path)
+
 				.resize(200)
+				
 				.write(path_200,function(err){
 					if(err) throw err;
 					save();
@@ -77,9 +79,9 @@ router.post('/', function(req, res) {
 	
     fs.writeFile(path, dataBuffer, function(err) {
         if(err){
-          res.send(err);
+    		res.send({result: -1, msg: err});
         }else{
-          resize();
+      		resize();
         }
     });
 	// var path = req.files.photo.path,

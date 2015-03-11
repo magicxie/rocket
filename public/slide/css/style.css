@@ -227,7 +227,19 @@ h3{
     font-size: 26px;
 }
 
+
 /*derrick*/
+.auto-img{
+    max-width: 96%;
+}
+strike{
+    color: #ccc;
+}
+.wx-img{
+    position: absolute;
+    right: 50px;
+    top: 150px;
+}
 .center{
     text-align: center;
     width: 100%;
