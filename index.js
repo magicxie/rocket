@@ -4,6 +4,8 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var port = process.env.PORT || 3000;
+var path = require('path');
+var hbs = require('hbs');
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
@@ -11,8 +13,25 @@ server.listen(port, function () {
 
 // Routing
 app.use(express.static(__dirname + '/public'));
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.html',hbs.__express);
+app.set('view engine', 'html');
 
-// Chatroom
+app.get('/', function(req, res) {
+    res.render('index', { title: 'H5PPT' });
+});
+
+app.get('/m_index', function(req, res) {
+    res.render('m_index', { title: 'H5PPT' });
+});
+app.get('/m_ppt', function(req, res) {
+    res.render('m_ppt', { title: 'H5PPT' });
+});
+
+app.get('ppt', function(req, res) {
+    res.render('ppt', { title: 'H5PPT' });
+});
 
 // usernames which are currently connected to the chat
 var usernames = {};
@@ -46,7 +65,7 @@ io.on('connection', function (socket) {
         });
     });
 
-    socket.on('slide', function (cmd) {
+    socket.on('page', function (cmd) {
 	
         socket.broadcast.emit('slide control', {
             cmd: cmd
@@ -54,6 +73,24 @@ io.on('connection', function (socket) {
 	
 	console.log(cmd);
 	
+    });
+
+    socket.on('fullscreen', function (data) {
+        socket.broadcast.emit('fullscreen',data);
+    });
+
+    socket.on('closefullscreen', function (data) {
+        socket.broadcast.emit('closefullscreen',data);
+    });
+
+    socket.on('toppt', function (data) {
+        socket.broadcast.emit('toppt',data);
+    });
+    socket.on('showQr', function (data) {
+        socket.broadcast.emit('showQr',data);
+    });
+    socket.on('hideQr', function (data) {
+        socket.broadcast.emit('hideQr',data);
     });
     
     socket.on('send', function (username) {

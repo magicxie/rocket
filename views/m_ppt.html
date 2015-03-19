@@ -1,0 +1,28 @@
+<link rel='stylesheet' href='/stylesheets/m_index.css' />
+<a href="#" class="btn page" data-cmd="prev">prev</a>
+<a href="#" class="btn page" data-cmd="next">next</a>
+
+<a href="#" class="btn long-btn" id="showQr">showQr</a>
+
+<a href="#" class="btn long-btn" id="hideQr">hideQr</a>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/socket.io.js"></script>
+<script>
+	var socket = io();
+	$('#showQr').on('touchend',function(e){
+		e.preventDefault();
+		socket.emit('showQr',{});
+	});
+	$('#hideQr').on('touchend',function(e){
+		e.preventDefault();
+		socket.emit('hideQr',{});
+	});
+
+	$('.page').on('touchend',function(e){
+		e.preventDefault();
+		socket.emit('page', $(this).data('cmd'));
+	});
+
+</script>
+    

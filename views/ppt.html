@@ -1,0 +1,94 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<div class="qr-btn"><img src="/images/qr.png"></div>
+<div id="impress">
+	<div id="first" class="step slide">
+        <img src="css/images/h5.jpg" alt="">
+        <q>H5能力展示</q>
+    </div>
+    <div class="step slide">
+        <h2>photowall</h2>
+        
+
+        <iframe src="http://localhost:3000" class="demo-frame" frameborder="0" scrolling="no"></iframe>
+        <div class="p-info">
+        	<p><!-- <strike>离线存储</strike> or  -->本地存储</p>
+	        <p>图片处理</p>
+	        <p>实时通信</p>
+	        <p>响应式布局</p>
+        </div>
+        <iframe src="http://localhost:3000/user" class="demo-frame" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/impress.js"></script>
+<script src="/javascripts/socket.io.js"></script>
+<script>
+	var page = $('#impress').children('.slide');
+	var firstX = -1000;
+	page.each(function(i,n){
+		$(n).attr({
+			'data-x': firstX + i * 1000,
+			'data-y': '-1500'
+		});;
+	})
+	impress().init();
+
+	var hashQrPage = {
+		'2': '/images/qr.png',
+		'5': '/images/qr.png'
+	};
+	var btn = $('.qr-btn');
+	$(window).on('hashchange',function(e){
+		var page = location.hash.split('-')[1];
+		if(hashQrPage[page]){
+			btn.find('img').attr('src',hashQrPage[page]);
+			btn.fadeIn();
+		}else{
+			if(btn.is('.open-qr')){
+				hideQr();
+			}
+			btn.fadeOut();
+		}
+	});
+
+	btn.on('click',function(){
+		if(btn.is('.open-qr')){
+			hideQr();
+		}else{
+			showQr();
+		}
+	});
+
+	function showQr(){
+		var page = location.hash.split('-')[1];
+		var w = $(window),
+			ww = w.width(),
+			wh = w.height(),
+			bw = 520,
+			bh = 520;
+		if(hashQrPage[page]){
+			btn.addClass('open-qr');
+			btn.css({
+				left: (ww - bw) / 2,
+				top: (wh - bh) / 2
+			});
+		}
+	}
+
+	function hideQr(){
+		btn.removeClass('open-qr').removeAttr('style').css({
+			display: 'block'
+		});
+	}
+
+	var socket = io();
+	//events
+	socket.on('showQr',function(data){
+		showQr();
+	});
+
+	socket.on('hideQr',function(data){
+		hideQr();
+	});
+</script>
