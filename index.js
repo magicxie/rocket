@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('.html',hbs.__express);
 app.set('view engine', 'html');
 
-app.get('/', function(req, res) {
+app.get('/a', function(req, res) {
     res.render('index', { title: 'H5PPT' });
 });
 

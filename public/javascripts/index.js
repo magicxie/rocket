@@ -33,7 +33,7 @@
 
 	//to ppt home
 	socket.on('toppt',function(data){
-		location = '/ppt';
+		location = '/slide/index.html';
 	});
 
 	////////////////////////////////////////////////////////
@@ -141,6 +141,7 @@
 		e.preventDefault();
 
 		socket.emit('toppt',{});
+		location = '/m_ppt';
 	});
 	
 })(jQuery);
