@@ -1,0 +1,35 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-size: 14px;
+	font-family: 'microsoft yahei';
+	background: #000;
+	padding-top: 20px;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+.btn{
+	border: 1px solid #fff;
+	display: inline-block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-size: 30px;
+	border-radius: 5px;
+}
+
+.page{
+	width: 40%;
+	margin: 10px 4.5%;
+}
+
+.long-btn{
+	width: 90%;
+	margin: 20px 5%;
+}
+

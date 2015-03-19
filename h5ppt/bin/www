@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+var debug = require('debug')('h5ppt');
+var app = require('../app');
+
+app.set('port', process.env.PORT || 3005);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+
+/////////////////
+var io = require('socket.io')(server);
+
+io.on('connection', function (socket) {
+	socket.on('page', function (data) {
+		socket.broadcast.emit('page',data);
+	});
+	socket.on('fullscreen', function (data) {
+		socket.broadcast.emit('fullscreen',data);
+	});
+
+	socket.on('closefullscreen', function (data) {
+		socket.broadcast.emit('closefullscreen',data);
+	});
+
+	socket.on('toppt', function (data) {
+		socket.broadcast.emit('toppt',data);
+	});
+	socket.on('showQr', function (data) {
+		socket.broadcast.emit('showQr',data);
+	});
+	socket.on('hideQr', function (data) {
+		socket.broadcast.emit('hideQr',data);
+	});
+});
