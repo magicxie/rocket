@@ -312,6 +312,14 @@ strike{
 
 /*magic*/
 .font-green{color:green;}
+ul.intro{
+    list-style-type: disc;
+    padding-left: 30px;
+    font-size: 22px;
+}
+ul.intro li{
+    margin: 10px 0px;
+}
 /*magic*/
 
 
