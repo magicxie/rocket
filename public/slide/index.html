@@ -104,10 +104,10 @@
 			<div style="float:right;width: 50%;">检测用户手指触摸屏幕图像位置的像素透明度设成0</div>
 		</div>
 		<div class="step slide chat chat-1">
-			<h2>即时聊天室</h2>
+			<h2>WebSocket 实例</h2>
 			<iframe src="http://chat.tangchanglin.com/chat.php" width="350" height="550" ></iframe>
 			<div class="content-right">
-				<h3 >基于WebSocket进行实时通信的经典应用场景</h3>
+				<h3 >聊天室，基于WebSocket进行实时通信的经典应用场景</h3>
 				<p >目前已经实现以下功能：</p>
 				<ul>
 					<li>文字消息</li>
@@ -131,19 +131,66 @@
 			</div>
 			<div id="qr-wrap" ><img alt="" src="css/images/chat-qr-firefox.png" ></div>
 		</div>
-		<div class="step slide chat chat-3">
-			<h2>即时聊天室</h2>
+		<div class="step slide chat chat-2">
+			<h2>WebSocket应用场景</h2>
 			<div class="content">
-				<p >主要涉及HTML5特性</p>
+				<p >我们可以用来干什么？</p>
 				<ul >
-					<li>通信：WebSocket</li>
-					<li>录音：getUserMedia('audio') + &lt;audio&gt;</li>
-					<li>拍照：getUserMedia('video') + &lt;video&gt; + &lt;canvas&gt; </li>
-					<li>位置：geolocation</li>
-					<li>全屏：requestFullscreen</li>
+					<li>
+						多媒体聊天：聊天室、在线客服
+						<p><img alt="" src="css/images/chat-screen-voice.png" ><img alt="" src="css/images/tom-chat2-01.png" /></p>
+					</li>
+					<li>
+						在线游戏：双人打飞机、棋牌类游戏
+						<p><img alt="" src="css/images/tom-chat2-02.png" /></p>
+					</li>
+					<li>
+						数据实时监控：反观镜全景视图、股票基金 
+						<p><img alt="" src="css/images/tom-chat2-03.png" /></p>
+					</li>
+					<li>
+						多屏互动：活动推广（<a href="http://zt.qq.com/act/hdz/index.htm" target="_blank">《斗战诛天》）</a>
+						<p><img alt="" src="css/images/tom-chat2-04.png" /></p>
+					</li>
+					<li>
+						.......
+						<p></p>
+					</li>
 				</ul>
-				<p ><img alt="" src="css/images/chat-screen-text.png" ><img alt="" src="css/images/chat-screen-voice.png" ><img alt="" src="css/images/chat-screen-capture.png" ><img alt="" src="css/images/chat-screen-location.png" ><img alt="" src="css/images/chat-screen-user.png" ></p>
+				<p class="imgList"><img alt="" src="css/images/chat-screen-voice.png" ><img alt="" src="css/images/tom-chat2-02.png" /><img alt="" src="css/images/tom-chat2-03.png" /></p>
 			</div>
+		</div>
+		<div class="step slide chat chat-3">
+			<h2>WebSocket优势和缺点？</h2>
+			<div class="content">
+				<p >WebSocket 出现之前，我们通过 轮询/长连接/Flash 来实现 </p>
+				<p style="color: green;font-weight: bold;">优点</p>
+				<ul >
+					<li>
+						带宽消耗非常低：冗余数据少<img id="chat-3-chart" alt="" src="css/images/tom-chat3-01.jpg" >
+					</li>
+					<li>
+						真正的实时数据通信：TCP连接，双向通信
+					</li>
+					<li>
+						主动推送能力：由服务端主动推送数据到客户端
+					</li>
+					<li>
+						不需要安装插件
+					</li>
+				</ul>
+				<p style="color: red;font-weight: bold;">缺点</p>
+				<ul >
+					<li>
+						浏览器兼容性：Chrome、Firefox、IE10+ 
+						<p><img alt="" src="css/images/tom-chat3-01.jpg" ></p>
+					</li>
+				</ul>
+			</div>
+			<div id="qr-layer" >
+
+			</div>
+			<div id="qr-wrap" ><img alt="" src="" ></div>
 		</div>
 	    <div class="step slide">
 	        <h2>H5能力扩展 - 微信JS-SDK</h2>
@@ -211,14 +258,38 @@
 		});
 
 		$('.chat-1 .content-right a').click(function(){
-			$('#qr-wrap img').attr('src',$(this).attr("ref"));
-			$('#qr-wrap').fadeIn();
-			$('#qr-layer').fadeIn();
+			$('.chat-1 #qr-wrap img').attr('src',$(this).attr("ref"));
+			$('.chat-1 #qr-wrap').fadeIn();
+			$('.chat-1 #qr-layer').fadeIn();
 		})
-		$('#qr-layer').click(function(){
-			$('#qr-wrap').fadeOut();
+		$('.chat-1 #qr-layer').click(function(){
+			$('.chat-1 #qr-wrap').fadeOut();
 			$(this).fadeOut();
+		});
+		
+		$('.chat-2 li').click(function(){
+			if($(this).find("p").is(":visible")){
+				$(this).find("p").hide();
+				$('.chat-2 li').fadeIn();
+				$('.chat-2 .imgList').show();
+			}else{
+				$('.chat-2 li').hide();
+				$('.chat-2 .imgList').hide();
+				$(this).fadeIn();
+				$(this).find("p").fadeIn();
+			}
+			
+		});
+		
+		$("#chat-3-chart").click(function(){
+			$('.chat-3 #qr-wrap img').attr('src',$(this).attr("src"));
+			$('.chat-3 #qr-wrap').fadeIn();
+			$('.chat-3 #qr-layer').fadeIn();
 		})
+		$('.chat-3 #qr-layer').click(function(){
+			$('.chat-3 #qr-wrap').fadeOut();
+			$(this).fadeOut();
+		});
 
 		var hashQrPage = {
 			'5': '/images/qr.png',
