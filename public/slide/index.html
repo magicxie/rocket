@@ -14,42 +14,36 @@
 	    </div>
 
 	    <div class="step slide">
-	        <h2>功能列表 - html5</h2>
-	        <h3>语义化标签</h3>
-	        <img src="css/images/layout.jpg" alt="">
-	        <h3>功能标签</h3>
-	        <ul class="tag-list">
-	        	<li>&lt;audio&gt;</li>
-	        	<li>&lt;canvas&gt;</li>
-	        	<li>&lt;video&gt;</li>
-	        </ul>
+			<header>Web技术发展历程</header>
+			<section>
+				<ul id="timeline">
+					<li data-auto=""><span class="year">1991</span> <span class="html">HTML</span></li>
+					<li data-auto=""><span class="year">1994</span> <span class="html">HTML 2</span></li>
+					<li data-auto=""><span class="year">1996</span> <span class="css">CSS 1</span> + <span class="js">JavaScript</span></li>
+					<li data-auto=""><span class="year">1997</span> <span class="html">HTML 4</span></li>
+					<li data-auto=""><span class="year">1998</span> <span class="css">CSS 2</span></li>
+					<li data-auto=""><span class="year">2000</span> <span class="html">XHTML 1</span></li>
+					<li><span class="year"><em class="stroke">2002</em></span> <span class="css">Tableless Web Design</span></li>
+					<li><span class="year"><em class="stroke">2005</em></span> <span class="js">AJAX</span></li>
+					<li><span class="year"><em class="stroke">2009</em></span> <span class="html">HTML 5</span></li>
+				</ul>
+			</section>
 	    </div>
-	    <div class="step slide">
-	        <h2>功能列表 - <span class="font-green">css3</span></h2>
-			<ul class="intro">
-	        <li>选择器</li>
-	        <li>@Font-face web font文字渲染：实现<a href="https://icomoon.io/app/#/select">图标字体</a></li>
-	        <li>多列布局</li>
-			<li>边框和颜色、圆角</li>
-	        <li>渐变效果</li>
-	        <li>阴影和反射</li>
-	        <li>背景效果</li>
-	        <li>盒子模型</li>
-            <li>响应式布局</li>
-	        <li>Transitions, Transforms 和 Animation</li>
+		<div class="step slide">
+			<q>HTML5新标签</q>
+		</div>
+		<div class="step slide">
+			<h2>语义化</h2>
+			<img src="css/images/sematic.png"/>
+			<ul style="float: right">
+				<li>SEO优化</li>
+				<li>无障碍阅读</li>
+				<li>开发效率</li>
 			</ul>
-	        <img src="css/images/css-a.png" alt="">
-	    </div>
-	    <div class="step slide">
-	        <h2>功能列表 - <span class="font-green">javascript</span></h2>
-	        <ul class="intro">
-                <li>WebSocket：实时通信&长连接</li>
-                <li>WebGL：3d效果</li>
-                <li>Local storage和web sql：离线缓存</li>
-                <li>File Api:读写本地文件</li>
-                <li>js sdk：获得原生应用的能力</li>
-	        </ul>
-	    </div>
+		</div>
+		<div class="step slide">
+			<q>文件处理</q>
+		</div>
 		<div class="step slide">
 			<h2>photowall</h2>
 
@@ -71,8 +65,23 @@
 	        <h2>photowall - <span class="font-green">本地存储localStorage</span></h2>
 	        <img src="css/images/localStorage.png" alt="" class="auto-img">
 	    </div>
-            <div class="step slide">
-                <h2>年会小火箭-<span class="font-green">实时通信+css3动画+自定义字体</span></h2>
+		<div class="step slide">
+		</div>
+		<div class="step slide">
+			<q>硬件访问能力</q>
+		</div>
+		<div class="step slide">
+			<q>新版的CSS</q>
+		</div>
+		<div class="step slide">
+			<ul style="float: right">
+				<li>SEO优化</li>
+				<li>无障碍阅读</li>
+				<li>开发效率</li>
+			</ul>
+		</div>
+		<div class="step slide">
+                <h2>年会小火箭-<span class="font-green">CSS3动画+自定义字体</span></h2>
 		<a id="reloadRocketFrame" style="cursor: pointer">刷新</a>
             <iframe style="width: 100%;height: 85%;" id="rocketFrame" src="http://cloud.eggcanfly.net:3000/counter.html"></iframe>
 	    </div>
@@ -102,6 +111,9 @@
 			<h2>刮刮卡<span class="font-green">画布 + 图像处理</span></h2>
 			<iframe src="http://www.liveapp.cn/auto/index/39049?channel=1&weixin.qq.com=#wechat_webview_type=1" class="demo-frame" frameborder="0" scrolling="no"></iframe>
 			<div style="float:right;width: 50%;">检测用户手指触摸屏幕图像位置的像素透明度设成0</div>
+		</div>
+		<div class="step slide chat chat-1">
+			<h2>WebSocket 实例</h2>
 		</div>
 		<div class="step slide chat chat-1">
 			<h2>WebSocket 实例</h2>
@@ -167,23 +179,29 @@
 				<p style="color: green;font-weight: bold;">优点</p>
 				<ul >
 					<li>
-						带宽消耗非常低：冗余数据少<img id="chat-3-chart" alt="" src="css/images/tom-chat3-01.jpg" >
+						轻量：带宽消耗非常低<img id="chat-3-chart" alt="" src="css/images/tom-chat3-01.jpg" >
 					</li>
 					<li>
-						真正的实时数据通信：TCP连接，双向通信
+						实时：TCP连接，双向通信
 					</li>
 					<li>
-						主动推送能力：由服务端主动推送数据到客户端
+						Push能力：由服务端主动推送数据到客户端
 					</li>
 					<li>
-						不需要安装插件
+						无依赖：不需要安装Flash等插件
+					</li>
+					<li>
+						Mobile Ready：移动端绝大部分浏览器支持
 					</li>
 				</ul>
-				<p style="color: red;font-weight: bold;">缺点</p>
+				<p style="color: red;font-weight: bold;">不足</p>
 				<ul >
 					<li>
-						浏览器兼容性：Chrome、Firefox、IE10+ 
+						PC上需要现代浏览器支持：Chrome、Firefox、IE10+
 						<p><img alt="" src="css/images/tom-chat3-01.jpg" ></p>
+					</li>
+					<li>
+						属于新协议：服务端需升级
 					</li>
 				</ul>
 			</div>
