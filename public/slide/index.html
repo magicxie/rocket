@@ -10,9 +10,8 @@
 	<div id="impress">
 		<div id="first" class="step slide">
 	        <img src="css/images/h5.jpg" alt="">
-	        <q>深入浅出H5的应用场景</q>
+	        <q>深入浅出H5</q>
 	    </div>
-
 	    <div class="step slide">
 			<header>Web技术发展历程</header>
 			<section>
@@ -30,9 +29,6 @@
 			</section>
 	    </div>
 		<div class="step slide">
-			<q>HTML5新标签</q>
-		</div>
-		<div class="step slide">
 			<h2>语义化</h2>
 			<img src="css/images/sematic.png"/>
 			<ul style="float: right">
@@ -42,43 +38,102 @@
 			</ul>
 		</div>
 		<div class="step slide">
-			<q>文件处理</q>
+			<h2>表单验证和新输入框类型</h2>
+			<section class="code">
+				<pre class="form-inputs prettyprint"><input type="text" required=""><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><b><span class="atn">required</span></b><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="email" value="some@email.com"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">email</span></b><span class="atv">"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"some@email.com"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">date</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"2010-08-14"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"2011-08-14"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"2010-08-14"</span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="range" min="0" max="50" value="10"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">range</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"50"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input results="10" type="search" placeholder="Search..."><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">search</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">results</span></b><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"Search..."</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">tel</span></b><span class="atv">"</span><span class="pln"> &nbsp;</span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"(555) 555-5555"</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><b><span class="atn">pattern</span></b><span class="pun">=</span><span class="atv">"^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="color" placeholder="e.g. #bbbbbb"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">color</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"e.g. #bbbbbb"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="number" step="1" min="-5" max="10" value="0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">number</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">step</span></b><span class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"-5"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br></span><div style="height:0px; clear:both;"><span class="pln"><br></span></div></pre>
+			</section>
 		</div>
 		<div class="step slide">
 			<h2>photowall</h2>
+			<h3><strike>离线存储</strike> or 本地存储</h3>
+			<h3>图片处理</h3>
+			<h3>实时通信</h3>
+			<h3>响应式布局</h3>
+		</div>
+		<div class="step slide">
+			<h2>photowall - 资源本地存储</h2>
+			<table class="tb-list">
+				<tr>
+					<td width="70"></td>
+					<th>http缓存</th>
+					<th>离线存储(manifest)</th>
+					<th>本地存储(localStorage)</th>
+				</tr>
+				<tr>
+					<th>优点：</th>
+					<td>兼容性好；实现优雅，仅需服务端设置相应的http头</td>
+					<td>实现简单，有一个单独文件管理需缓存的文件</td>
+					<td>移动端几乎都支持，（读取缓存速度比http缓存更快）</td>
+				</tr>
+				<tr>
+					<th>缺点：</th>
+					<td>依赖浏览器策略，刷新会发送304请求</td>
+					<td>会缓存动态页面</td>
+					<td>额外增加点代码，不能直接缓存图片</td>
+				</tr>
+				<tr>
+					<th>结论：</th>
+					<td>适合pc端场景</td>
+					<td>离线也能打开，适合内嵌到客户端</td>
+					<td>适合移动端的页面</td>
+				</tr>
+			</table>
+			<p class="z-a">注：本地存储已广泛应用到<b>勋章墙</b>和<b>活动页面</b>，勋章墙的缓存命中率在10-15%左右。</p>
+			<p class="z-a">photowall使用了http缓存 + 本地存储</p>
+		</div>
 
-
-			<iframe src="http://cloud.eggcanfly.net:3002" class="demo-frame" frameborder="0"></iframe>
-			<div class="p-info">
-				<p><!-- <strike>离线存储</strike> or  -->本地存储</p>
-				<p>图片处理</p>
-				<p>实时通信</p>
-				<p>响应式布局</p>
+		<div class="step slide">
+			<h2>photowall - 照片处理</h2>
+			<h2>上传的困境</h2>
+			<img src="css/images/prograss.png" style="width: 80%;margin: 0 10%;"/>
+			<p class="cc-desc">照片太大或网络质量差<p>
+			<p class="cc-desc">导致上传失败率高和上传速度低</p>
+		</div>
+		<div class="step slide">
+			<h2>photowall - 照片处理</h2>
+			<h2>使用FileAPI和Canvas先压缩再上传,进度条再见</h2>
+			<div style="border-bottom: 1px gray solid">
+				<div class="compress before">压缩前</div>
+				<div class="compress after">压缩后</div>
 			</div>
-			<iframe src="http://cloud.eggcanfly.net:3002/user" class="demo-frame" frameborder="0" ></iframe>
-		</div>
-	    <div class="step slide">
-	        <h2>photowall - <span class="font-green">离线存储manifest</span></h2>
-	        <img src="css/images/cache.png" alt="" class="auto-img">
-	    </div>
-	    <div class="step slide">
-	        <h2>photowall - <span class="font-green">本地存储localStorage</span></h2>
-	        <img src="css/images/localStorage.png" alt="" class="auto-img">
-	    </div>
-		<div class="step slide">
+			<p class="cc-desc">2-3M的照片可以压缩到<b>150K</b>以下（适合移动网络下数据传输）</p>
+			<p class="cc-desc">可断点续传和秒传</p>
 		</div>
 		<div class="step slide">
-			<q>硬件访问能力</q>
-		</div>
-		<div class="step slide">
-			<q>新版的CSS</q>
-		</div>
-		<div class="step slide">
-			<ul style="float: right">
-				<li>SEO优化</li>
-				<li>无障碍阅读</li>
-				<li>开发效率</li>
-			</ul>
+			<h2>photowall - 响应式布局(@media query)</h2>
+			<h3>适配多种屏幕的噩梦</h3>
+			<table class="tb-list feijitable">
+				<tbody><tr>
+					<td width="100"></td>
+					<td>以往做法</td>
+					<td width="30%">响应式布局</td>
+				</tr>
+				<tr>
+					<th>宽屏LCD</th>
+					<td>页面适配1920 x 1080</td>
+					<td rowspan="6" style="vertical-align: middle;color: green;">一套应用了@media query技术的CSS适配所有屏幕</td>
+				</tr>
+				<tr>
+					<th>iphone5</th>
+					<td>页面适配1136 x 640视网膜屏幕</td>
+				</tr>
+				<tr>
+					<th>iphone6</th>
+					<td>页面适配1334 x 7500视网膜屏幕</td>
+				</tr>
+				<tr>
+					<th>iphone6+</th>
+					<td>页面适配1920 x 1080视网膜屏幕</td>
+				</tr>
+				<tr>
+					<th>三星S6 Edge</th>
+					<td>页面适配2560x1440 Quad HD屏幕</td>
+				</tr>
+				<tr>
+					<th>更先进的手机</th>
+					<td>无尽的页面适配</td>
+				</tr>
+				</tbody></table>
 		</div>
 		<div class="step slide">
                 <h2>年会小火箭-<span class="font-green">CSS3动画+自定义字体</span></h2>
@@ -91,26 +146,47 @@
 		 <a id="to3D" style="cursor: pointer" class="chart" data-href="http://echarts.baidu.com/x/doc/example/map3d_population3.html">3D</a>
 		<iframe  style="width: 100%;height: 85%;" id="chartFrame" src="http://echarts.baidu.com/doc/example/map15.html"></iframe>
 	    </div>
-	    <div class="step slide zhongli">
+		<div class="step slide zhongli">
 			<h2>重力感应- <span class="font-green">年会摇一摇拜年</span></h2>
 			<iframe src="http://hd.3g.qq.com/g/bainian/index.html" class="demo-frame" frameborder="0" scrolling="no"></iframe>
-			<div style="float:right;width: 50%;">可以获取手机所处的角度、方位和朝向。</div>
+			<div style="float:right;width: 50%;">可以获取手机所处的角度、方位和朝向。<br /><br /><br />
+				<div class="binbintitle">应用场景：手机浏览器</div>
+				<div class="binbintitle">支持情况：良好，主流的手机都支持</div>
+				<div class="binbintitle">这个案例的开发时间：1天</div></div>
 		</div>
-	    <div class="step slide">
+		<div class="step slide">
 			<h2>打飞机双人版</h2>
 			<iframe src="http://philgong.kf0309.3g.qq.com/g/imgclean/dafeiji/index.jsp" class="demo-frame" frameborder="0" scrolling="no"></iframe>
-			<div style="float:right;width: 50%;">
-				画布:处理图像,检测两个不规则图形之间的碰撞<br /><br />
-				实时通信:当飞机位置发生改变或者死亡实时通知另外一名玩家
-				<br/>
-				<img style="display: block;width: 100%;" src="css/images/weixinhao.png" />　　　
+			<div style="float:right;width: 55%;">
+				<div class="fs22">两个物体之间碰撞检测</div>
+				<table class="tb-list feijitable">
+					<tbody><tr>
+						<td width="70"></td>
+						<td>不规则图形</td>
+						<td>浏览器支持情况</td>
+					</tr>
+					<tr>
+						<th>canvas</th>
+						<td>支持</td>
+						<td><span class="tableSpan">pc：ie678以外的浏览器都支持<br />手机：基本都支持</span></td>
+					</tr>
+					<tr>
+						<th>div</th>
+						<td>只支持矩形</td>
+						<td>所有浏览器均支持</td>
+					</tr>
+					</tbody></table>
+
+				<img class="gzhewm" style="display: block;width: 100%;" src="css/images/pengzhuang.png" />　　
+
 			</div>
 		</div>
-
-	    <div class="step slide">
+		<div class="step slide">
 			<h2>刮刮卡<span class="font-green">画布 + 图像处理</span></h2>
 			<iframe src="http://www.liveapp.cn/auto/index/39049?channel=1&weixin.qq.com=#wechat_webview_type=1" class="demo-frame" frameborder="0" scrolling="no"></iframe>
-			<div style="float:right;width: 50%;">检测用户手指触摸屏幕图像位置的像素透明度设成0</div>
+			<div style="float:right;width: 50%;">检测用户手指触摸屏幕图像位置的像素透明度设成0<br /><br /><br />
+				<div class="binbintitle">支持情况：几乎全部手机都支持</div>
+				<div class="binbintitle">这个案例的开发时间：1天</div></div>
 		</div>
 		<div class="step slide chat chat-1">
 			<h2>WebSocket 实例</h2>

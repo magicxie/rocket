@@ -306,6 +306,29 @@ strike{
     height: 500px;
     padding: 10px;
 }
+.font-large{
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+.compress{
+    display: inline-block;
+    width: 10%;
+    max-height: 50%;
+    font-size: 0.7em;
+    text-align: center;
+    color: white;
+    vertical-align: bottom;
+}
+.compress.before{
+    margin-left:  20%;
+    background: red;
+    height: 350px;
+}
+.compress.after{
+    margin-left:  5%;
+    background: green;
+    height: 35px;
+}
 /*derrick*/
 
 
@@ -320,6 +343,32 @@ ul.intro{
 ul.intro li{
     margin: 10px 0px;
 }
+section.code {
+    text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+    color: #3f3f3f;
+    display: block;
+    overflow: hidden;
+    font-size: 0.5em;
+
+}
+pre {
+    font-family: "Droid Sans Mono", Courier;
+    background: rgba(255, 0, 0, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 5px;
+}
+.form-inputs input {
+    float: right;
+}
+[required] {
+    border-color: #88a;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 255, .5);
+}
+:invalid {
+    border-color: #e88;
+    -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+}
 /*magic*/
 
 
@@ -327,6 +376,29 @@ ul.intro li{
 .zhongli .img{width:50%;display:inline-block; text-align:center; }
 .zhongli img{ display:block; margin:0 auto; }
 .binbinfs{font-size:28px; line-height:2; margin-top:20px;}
+.tb-list{
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.tb-list th{
+    font-size: 22px;
+    color: #000;
+}
+.tb-list th,
+.tb-list td{
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 15px 5px;
+}
+.fs22{font-size:22px; }
+.fs20{font-size:20px; }
+.fs18{font-size:18px; }
+.tableSpan{display:inline-block; text-align:left; }
+.gzhewm{margin:0 auto;display:block;  }
+.feijitable{margin-top:10px;}
+.binneirong{font-size:18px; line-height:1.5; padding-left:1em; }
+.binbintitle{font-size:20px; padding-top:10px;  }
 /*bb*/
 
 
