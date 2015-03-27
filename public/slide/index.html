@@ -251,35 +251,66 @@
 		<div class="step slide chat chat-3">
 			<h2>WebSocket优势和缺点？</h2>
 			<div class="content">
-				<p >WebSocket 出现之前，我们通过 轮询/长连接/Flash 来实现 </p>
-				<p style="color: green;font-weight: bold;">优点</p>
-				<ul >
-					<li>
-						轻量：带宽消耗非常低<img id="chat-3-chart" alt="" src="css/images/tom-chat3-01.jpg" >
-					</li>
-					<li>
-						实时：TCP连接，双向通信
-					</li>
-					<li>
-						Push能力：由服务端主动推送数据到客户端
-					</li>
-					<li>
-						无依赖：不需要安装Flash等插件
-					</li>
-					<li>
-						Mobile Ready：移动端绝大部分浏览器支持
-					</li>
-				</ul>
-				<p style="color: red;font-weight: bold;">不足</p>
-				<ul >
-					<li>
-						PC上需要现代浏览器支持：Chrome、Firefox、IE10+
-						<p><img alt="" src="css/images/tom-chat3-01.jpg" ></p>
-					</li>
-					<li>
-						属于新协议：服务端需升级
-					</li>
-				</ul>
+			<table class="tb-list">
+				<tr>
+					<td width="70"></td>
+					<th width="160">轮询</th>
+					<th width="160">长连接</th>
+					<th width="160">Flash</th>
+					<th>WebSocket</th>
+				</tr>
+				<tr>
+					<th>优点：</th>
+					<td>
+						1.简单<br/>
+					</td>
+					<td>
+						1.无效请求较少<br/>
+						2.相对实时
+					</td>
+					<td>
+						1.实时<br/>
+						2.Push能力<br/>
+						3.浏览器普遍支持
+					</td>
+					<td>
+						1.轻量<img id="chat-3-chart" alt="" src="css/images/tom-chat3-01.jpg" ><br/>
+						2.实时<br/>
+						3.Push能力<br/>
+						4.无依赖<br/>
+						5.移动端普遍支持
+					</td>
+				</tr>
+				<tr>
+					<th>缺点：</th>
+					<td>
+						1.冗余数据多<br/>
+						2.无效请求多<br/>
+						3.服务器开销大<br/>
+						4.不实时<br/>
+						5.无法主动推送
+					</td>
+					<td>
+						1.服务器开销大<br/>
+						2.适于单向接收数据
+					</td>
+					<td>
+						1.依赖插件<br/>
+						2.移动端支持较差
+					</td>
+					<td>
+						1.浏览器支持不完整<br/>
+						2.服务端需升级
+					</td>
+				</tr>
+				<tr>
+					<th>结论：</th>
+					<td>实时性不高，用户不多</td>
+					<td>实时性高，用户较少，数据交互少</td>
+					<td>桌面实时应用</td>
+					<td>实时性高，大用户量，桌面与移动</td>
+				</tr>
+			</table>
 			</div>
 			<div id="qr-layer" >
 

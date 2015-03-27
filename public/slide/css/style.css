@@ -488,7 +488,7 @@ pre {
 	cursor: pointer;
 	line-height: 40px;
 }
-.chat.chat-3 .content li img{
+.chat.chat-3 .content td img{
     max-height: 30px;
 	vertical-align:middle;
 	margin-left: 10px;
@@ -509,5 +509,9 @@ pre {
 .chat.chat-3 #qr-wrap img{
     max-height: 650px;
     text-align: center;
+}
+.chat.chat-3 table td{
+    text-align: left;
+	padding-left: 10px;
 }
 /*tom*/
