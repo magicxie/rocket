@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,13 +9,15 @@
 	<div class="qr-btn"><img src="/images/qr.png"></div>
 	<div id="impress">
 		<div id="first" class="step slide">
-	        <img src="css/images/h5.jpg" alt="">
-	        <q>深入浅出H5</q>
+	        <img src="css/images/h5.png" class="h5logo" alt="">
+	        <div class="firstpage-title">
+	        	<q>深入浅出H5</q>
+	        </div>
 	    </div>
 	    <div class="step slide">
 			<header>Web技术发展历程</header>
 			<section>
-				<ul id="timeline">
+				<ul class="trend" id="timeline">
 					<li data-auto=""><span class="year">1991</span> <span class="html">HTML</span></li>
 					<li data-auto=""><span class="year">1994</span> <span class="html">HTML 2</span></li>
 					<li data-auto=""><span class="year">1996</span> <span class="css">CSS 1</span> + <span class="js">JavaScript</span></li>
@@ -29,24 +31,39 @@
 			</section>
 	    </div>
 		<div class="step slide">
-			<h2>语义化</h2>
-			<img src="css/images/sematic.png"/>
-			<ul style="float: right">
-				<li>SEO优化</li>
-				<li>无障碍阅读</li>
-				<li>开发效率</li>
-			</ul>
+			<h2>语义化</h2> 
+			<img style="margin: 0 14%;" src="css/images/sematic.png"/>
 		</div>
 		<div class="step slide">
-			<h2>表单验证和新输入框类型</h2>
+			<h2>新控件和表单验证</h2>
 			<section class="code">
-				<pre class="form-inputs prettyprint"><input type="text" required=""><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><b><span class="atn">required</span></b><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="email" value="some@email.com"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">email</span></b><span class="atv">"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"some@email.com"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">date</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"2010-08-14"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"2011-08-14"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"2010-08-14"</span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="range" min="0" max="50" value="10"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">range</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"50"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input results="10" type="search" placeholder="Search..."><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">search</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">results</span></b><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"Search..."</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">tel</span></b><span class="atv">"</span><span class="pln"> &nbsp;</span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"(555) 555-5555"</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><b><span class="atn">pattern</span></b><span class="pun">=</span><span class="atv">"^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="color" placeholder="e.g. #bbbbbb"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">color</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span class="pun">=</span><span class="atv">"e.g. #bbbbbb"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="number" step="1" min="-5" max="10" value="0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span class="atv">number</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">step</span></b><span class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><b><span class="atn">min</span></b><span class="pun">=</span><span class="atv">"-5"</span><span class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br></span><div style="height:0px; clear:both;"><span class="pln"><br></span></div></pre>
+				<div><input type="text" required=""></div>
+				<div><input type="email" value="some@email.com"></div>
+				<div><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"></div>
+				<div><input type="range" min="0" max="50" value="10"></div>
+				<div><input results="10" type="search" placeholder="Search..."></div>
+				<div><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"></div>
+				<div><input type="color" placeholder="e.g. #bbbbbb"></div>
+				<div><input type="number" step="1" min="-5" max="10" value="0"></div>
 			</section>
+		</div>
+		<div class="step slide">
+			<h2>photowall</h2>
+
+
+			<iframe src="http://cloud.eggcanfly.net:3002" class="demo-frame" frameborder="0"></iframe>
+			<div class="p-info">
+				<p><!-- <strike>离线存储</strike> or  -->本地存储</p>
+				<p>图片处理</p>
+				<p>实时通信</p>
+				<p>响应式布局</p>
+			</div>
+			<iframe src="http://cloud.eggcanfly.net:3002/user" class="demo-frame" frameborder="0" ></iframe>
 		</div>
 		<div class="step slide">
 			<h2>photowall - 资源本地存储</h2>
 			<table class="tb-list">
-				<tr>
+				<tr> 
 					<td width="70"></td>
 					<th>http缓存</th>
 					<th>离线存储(manifest)</th>
@@ -76,15 +93,14 @@
 		</div>
 
 		<div class="step slide">
-			<h2>photowall - 照片处理</h2>
-			<h2>上传的困境</h2>
-			<img src="css/images/prograss.png" style="width: 80%;margin: 0 10%;"/>
-			<p class="cc-desc">照片太大或网络质量差<p>
-			<p class="cc-desc">导致上传失败率高和上传速度低</p>
+			<h2>photowall - 上传的困境</h2>
+			<progress max=100 value=60></progress>
+			<p class="cc-desc">照片大？<p>
+			<p class="cc-desc">弱网络？</p>
+			<p class="cc-desc">频繁断线？</p>
 		</div>
 		<div class="step slide">
-			<h2>photowall - 照片处理</h2>
-			<h2>使用FileAPI和Canvas先压缩再上传,进度条再见</h2>
+			<h2>photowall - 使用FileAPI和Canvas先压缩再上传,进度条再见</h2>
 			<div style="border-bottom: 1px gray solid">
 				<div class="compress before">压缩前</div>
 				<div class="compress after">压缩后</div>
@@ -99,12 +115,12 @@
 				<tbody><tr>
 					<td width="100"></td>
 					<td>以往做法</td>
-					<td width="30%">响应式布局</td>
+					<td width="45%">响应式布局</td>
 				</tr>
 				<tr>
 					<th>宽屏LCD</th>
 					<td>页面适配1920 x 1080</td>
-					<td rowspan="6" style="vertical-align: middle;color: green;">一套应用了@media query技术的CSS适配所有屏幕</td>
+					<td rowspan="6" style="vertical-align: middle;color: #589D41;font-size: 1.6em;line-height: 2em;font-weight: bold;">使用@media query技术<br/>一套CSS<br/>适配所有屏幕</td>
 				</tr>
 				<tr>
 					<th>iphone5</th>
@@ -129,15 +145,75 @@
 				</tbody></table>
 		</div>
 		<div class="step slide">
-                <h2>年会小火箭-<span class="font-green">CSS3动画+自定义字体</span></h2>
-		<a id="reloadRocketFrame" style="cursor: pointer">刷新</a>
+                <h2><a id="reloadRocketFrame" style="cursor: pointer">年会小火箭</a>-<span class="font-green">CSS3动画+自定义字体</span></h2>
+	
             <iframe style="width: 100%;height: 85%;" id="rocketFrame" src="http://cloud.eggcanfly.net:3000/counter.html"></iframe>
 	    </div>
 	    <div class="step slide">
-	        <h2>图表应用<span class="font-green">画图+3D效果</span></h2>
-		 <a id="to2D" style="cursor: pointer" class="chart" data-href="http://echarts.baidu.com/doc/example/map15.html">2D</a>
-		 <a id="to3D" style="cursor: pointer" class="chart" data-href="http://echarts.baidu.com/x/doc/example/map3d_population3.html">3D</a>
-		<iframe  style="width: 100%;height: 85%;" id="chartFrame" src="http://echarts.baidu.com/doc/example/map15.html"></iframe>
+	    	<h2>100%还原字体？</h2>
+			<section style="
+    text-align: center;
+    font-size: 12em;
+    font-family: 微软雅黑;
+    line-height: 1em;">Ag</section>   		
+		</div>
+		<div class="step slide">
+
+			<h2>@font-face技术助力还原字体</h2>
+			<table class="tb-list">
+			<thead>
+				<th>以往</th>
+				<th>现在</th>				
+			</thead>
+			<tbody>
+				<tr>
+					<td>改wording需要换图，更新不及时</td>
+					<td>不依赖图片，wording随时更换</td>
+				</tr>
+				<tr>
+					<td>受限于客户端自带字体，通常使用安全字体或用图片</td>
+					<td>支持加载任何意字体</td>
+				</tr>
+				<tr>
+					<td>微调字体样式依赖设计师出图</td>
+					<td>可随时调整阴影，加粗</td>
+				</tr>
+				<tr>
+					<td>使用图片实现，放大后模糊</td>
+					<td>放大后文字依然锐利</td>
+				</tr>				
+			</tbody>
+				
+			</table>
+			<q style="font-size: 1em;text-align: center;">@font-face加载了真正的字体，变更字体如今非常灵活</q>
+			
+		</div>
+		<div class="step slide">
+
+			<h2>WebGL和SVG跨平台图表</h2>
+			<table class="tb-list">
+			<thead>
+				<th>以往</th>
+				<th>现在</th>				
+			</thead>
+			<tbody>
+				<tr>
+					<td>实现无法跨平台或依赖Flash</td>
+					<td>实现基于Web标准，天然跨平台</td>
+				</tr>
+				<tr>
+					<td>调整图表需要更新客户端费时费力</td>
+					<td>调整图表只需服务端发布</td>
+				</tr>
+							
+			</tbody>
+				
+			</table>
+			<q style="font-size: 1em;text-align: center;">基于WebGL和SVG实现的图表不仅拥有跨平台特性，借助现在先进的浏览器，表现力已大大增强</q>			
+		</div>
+	    <div class="step slide">
+	        <h2>Web上绘制3D图表</h2>
+		 <iframe  style="width: 100%;height: 85%;" id="chartFrame" src="/echartx/example/map3d_population3.html"></iframe>
 	    </div>
 		<div class="step slide zhongli">
 			<h2>重力感应- <span class="font-green">年会摇一摇拜年</span></h2>
@@ -359,7 +435,7 @@
 		var firstX = -1000;
 		page.each(function(i,n){
 			$(n).attr({
-				'data-x': firstX + i * 1000,
+				'data-x': firstX + i * 1100,
 				'data-y': '-1500'
 			});;
 		})

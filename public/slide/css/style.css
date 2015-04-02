@@ -179,16 +179,16 @@ a:focus {
 .slide {
     display: block;
 
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
+    width: 1000px;
+    height: 800px;
+    padding: 90px 100px;
 
-    background-color: white;
+    background-color: rgb(44, 44, 44);
     border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 
-    color: rgb(102, 102, 102);
+    color: rgb(242, 242, 242);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 
     /*font-family: 'Open Sans', Arial, sans-serif;*/
@@ -321,12 +321,12 @@ strike{
 }
 .compress.before{
     margin-left:  20%;
-    background: red;
-    height: 350px;
+    background: rgb(195, 89, 89);
+    height: 450px;
 }
 .compress.after{
     margin-left:  5%;
-    background: green;
+    background: rgb(88, 157, 65);
     height: 35px;
 }
 /*derrick*/
@@ -344,8 +344,8 @@ ul.intro li{
     margin: 10px 0px;
 }
 section.code {
-    text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
-    color: #3f3f3f;
+    /* text-shadow: rgba(152, 152, 152, 0.2) 0 2px 5px; */
+    /* color: #F0F0F0; */
     display: block;
     overflow: hidden;
     font-size: 0.5em;
@@ -353,9 +353,9 @@ section.code {
 }
 pre {
     font-family: "Droid Sans Mono", Courier;
-    background: rgba(255, 0, 0, 0.05);
+    /* background: rgba(255, 0, 0, 0.05); */
     border-radius: 8px;
-    border: 1px solid rgba(255, 0, 0, 0.2);
+    /* border: 1px solid rgba(255, 0, 0, 0.2); */
     padding: 5px;
 }
 .form-inputs input {
@@ -369,6 +369,38 @@ pre {
     border-color: #e88;
     -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
 }
+.h5logo{
+    position: absolute;
+right: 100px;
+top: 30%;
+}
+.firstpage-title{   
+position: absolute;
+top: 20%;
+width: 55%;
+}
+.firstpage-title q{
+    text-align: left;
+    border-bottom: 1px solid rgb(179, 179, 179);
+}
+.trend{
+
+}
+.trend li{
+    margin:0.5em 0;
+}
+.normal-title{
+
+}
+.code div{
+    width: 20%;
+    display: inline-block;
+    padding: 3em 5em;
+}
+.code div input{
+    line-height:2em;
+    width: 19em;
+}
 /*magic*/
 
 
@@ -379,11 +411,12 @@ pre {
 .tb-list{
     width: 100%;
     font-size: 18px;
-    margin-bottom: 20px;
+    margin: 2em 0;
 }
 .tb-list th{
     font-size: 22px;
-    color: #000;
+    color: #FFF;
+    font-weight: bold;
 }
 .tb-list th,
 .tb-list td{
@@ -515,3 +548,41 @@ pre {
 	padding-left: 10px;
 }
 /*tom*/
+
+/* This sets the dimensions of the Progress Bar element */
+progress {
+  width: 300px;
+  height: 17px;
+        display: block;
+        /* turn off defaults */
+        -webkit-appearance: none;
+        border: none;
+  width: 100%; */  /* height: 10%; */;
+  height: 10%;
+  margin: 30% 0 10% 0;
+}
+
+/* This rule sets the appearance of the progress bar background */
+progress::-webkit-progress-bar {
+        background: black;
+        border-radius: 50px;
+        padding: 2px;
+        box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* This rule sets the appearance of the progress bar meter */
+progress::-webkit-progress-value {
+    border-radius: 50px;
+          box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);  
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                      transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                      transparent 75%, transparent);
+                        -webkit-animation: move 1s linear 0 infinite;   
+                   
+}
+
+@-webkit-keyframes move {
+        0% {background-position: 0px 0px, 0 0, 0 0}
+        100% {background-position: -80px 0px, 0 0, 0 0}
+}
