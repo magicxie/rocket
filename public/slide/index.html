@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,105 +11,49 @@
 		<div id="first" class="step slide">
 	        <img src="css/images/h5.png" class="h5logo" alt="">
 	        <div class="firstpage-title">
-	        	<q>深入浅出H5</q>
+	        	<q>站在HTML5的风口</q>
 	        </div>
 	    </div>
 	    <div class="step slide">
-			<header>Web技术发展历程</header>
+			<header>HTML5吹的什么风</header>
 			<section>
+  
 				<ul class="trend" id="timeline">
-					<li data-auto=""><span class="year">1991</span> <span class="html">HTML</span></li>
-					<li data-auto=""><span class="year">1994</span> <span class="html">HTML 2</span></li>
-					<li data-auto=""><span class="year">1996</span> <span class="css">CSS 1</span> + <span class="js">JavaScript</span></li>
-					<li data-auto=""><span class="year">1997</span> <span class="html">HTML 4</span></li>
-					<li data-auto=""><span class="year">1998</span> <span class="css">CSS 2</span></li>
-					<li data-auto=""><span class="year">2000</span> <span class="html">XHTML 1</span></li>
-					<li><span class="year"><em class="stroke">2002</em></span> <span class="css">Tableless Web Design</span></li>
-					<li><span class="year"><em class="stroke">2005</em></span> <span class="js">AJAX</span></li>
-					<li><span class="year"><em class="stroke">2009</em></span> <span class="html">HTML 5</span></li>
+					<li>云端--清风</li>
+                    <li>通道--疾风</li>
+                    <li>终端--旋风</li>
 				</ul>
 			</section>
 	    </div>
+	    <div class="step slide">
+			<header>云端</header>
+			<q><mark>语义化</mark>、<mark>表单元素</mark>增强和<mark>响应式布局</mark>给沉重的网页带来一缕清风</q>
+	    </div>
 		<div class="step slide">
 			<h2>语义化</h2> 
-			<img style="margin: 0 14%;" src="css/images/sematic.png"/>
+			<img style="width:100%;" src="css/images/sematic.png"/>
 		</div>
 		<div class="step slide">
 			<h2>新控件和表单验证</h2>
 			<section class="code">
-				<div><input type="text" required=""></div>
-				<div><input type="email" value="some@email.com"></div>
-				<div><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"></div>
-				<div><input type="range" min="0" max="50" value="10"></div>
-				<div><input results="10" type="search" placeholder="Search..."></div>
-				<div><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"></div>
-				<div><input type="color" placeholder="e.g. #bbbbbb"></div>
-				<div><input type="number" step="1" min="-5" max="10" value="0"></div>
+				<div><label>必填项</label><input type="text" required=""></div>
+				<div><label>邮箱</label><input type="email" value="some@email.com"></div>
+				<div><label>日期</label><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"></div>
+				<div><label>滑动条</label><input type="range" min="0" max="50" value="10"></div>
+				<div><label>搜索框</label><input results="10" type="search" placeholder="Search..."></div>
+				<div><label>电话</label><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"></div>
+				<div><label>拾色器</label><input type="color" placeholder="e.g. #bbbbbb"></div>
+				<div><label>数字</label><input type="number" step="1" min="-5" max="10" value="0"></div>
 			</section>
 		</div>
 		<div class="step slide">
-			<h2>photowall</h2>
-
-
-			<iframe src="http://cloud.eggcanfly.net:3002" class="demo-frame" frameborder="0"></iframe>
-			<div class="p-info">
-				<p><!-- <strike>离线存储</strike> or  -->本地存储</p>
-				<p>图片处理</p>
-				<p>实时通信</p>
-				<p>响应式布局</p>
-			</div>
-			<iframe src="http://cloud.eggcanfly.net:3002/user" class="demo-frame" frameborder="0" ></iframe>
+			<h2>响应式布局</h2>
+			<iframe style="display:block;margin:auto;width:100%;transition: width 1s;" id="photowallFrame" src="http://isux.tencent.com/responsive-web-design.html" class="demo-frame" frameborder="0" ></iframe>
+			<p style="display: inline-block;min-width: 20%;width: 100%;">适配多种设备只需一套css，无需另建移动版网站</p>
 		</div>
+		<!--
 		<div class="step slide">
-			<h2>photowall - 资源本地存储</h2>
-			<table class="tb-list">
-				<tr> 
-					<td width="70"></td>
-					<th>http缓存</th>
-					<th>离线存储(manifest)</th>
-					<th>本地存储(localStorage)</th>
-				</tr>
-				<tr>
-					<th>优点：</th>
-					<td>兼容性好；实现优雅，仅需服务端设置相应的http头</td>
-					<td>实现简单，有一个单独文件管理需缓存的文件</td>
-					<td>移动端几乎都支持，（读取缓存速度比http缓存更快）</td>
-				</tr>
-				<tr>
-					<th>缺点：</th>
-					<td>依赖浏览器策略，刷新会发送304请求</td>
-					<td>会缓存动态页面</td>
-					<td>额外增加点代码，不能直接缓存图片</td>
-				</tr>
-				<tr>
-					<th>结论：</th>
-					<td>适合pc端场景</td>
-					<td>离线也能打开，适合内嵌到客户端</td>
-					<td>适合移动端的页面</td>
-				</tr>
-			</table>
-			<p class="z-a">注：本地存储已广泛应用到<b>勋章墙</b>和<b>活动页面</b>，勋章墙的缓存命中率在10-15%左右。</p>
-			<p class="z-a">photowall使用了http缓存 + 本地存储</p>
-		</div>
-
-		<div class="step slide">
-			<h2>photowall - 上传的困境</h2>
-			<progress max=100 value=60></progress>
-			<p class="cc-desc">照片大？<p>
-			<p class="cc-desc">弱网络？</p>
-			<p class="cc-desc">频繁断线？</p>
-		</div>
-		<div class="step slide">
-			<h2>photowall - 使用FileAPI和Canvas先压缩再上传,进度条再见</h2>
-			<div style="border-bottom: 1px gray solid">
-				<div class="compress before">压缩前</div>
-				<div class="compress after">压缩后</div>
-			</div>
-			<p class="cc-desc">2-3M的照片可以压缩到<b>150K</b>以下（适合移动网络下数据传输）</p>
-			<p class="cc-desc">可断点续传和秒传</p>
-		</div>
-		<div class="step slide">
-			<h2>photowall - 响应式布局(@media query)</h2>
+			<h2>响应式布局(Demo photowall)</h2>
 			<h3>适配多种屏幕的噩梦</h3>
 			<table class="tb-list feijitable">
 				<tbody><tr>
@@ -144,121 +88,53 @@
 				</tr>
 				</tbody></table>
 		</div>
+		-->
 		<div class="step slide">
-                <h2><a id="reloadRocketFrame" style="cursor: pointer">年会小火箭</a>-<span class="font-green">CSS3动画+自定义字体</span></h2>
-	
-            <iframe style="width: 100%;height: 85%;" id="rocketFrame" src="http://cloud.eggcanfly.net:3000/counter.html"></iframe>
-	    </div>
-	    <div class="step slide">
-	    	<h2>100%还原字体？</h2>
-			<section style="
-    text-align: center;
-    font-size: 12em;
-    font-family: 微软雅黑;
-    line-height: 1em;">Ag</section>   		
+			<header>通道</header>
+			<q><mark>WebSocket</mark>，<mark>存储API</mark>和<mark>文件API</mark>使网页可以实时通信，离线缓存和处理文件，网页的通信能力如疾风般大幅提升</q>
 		</div>
 		<div class="step slide">
-
-			<h2>@font-face技术助力还原字体</h2>
-			<table class="tb-list">
-			<thead>
-				<th>以往</th>
-				<th>现在</th>				
-			</thead>
-			<tbody>
-				<tr>
-					<td>改wording需要换图，更新不及时</td>
-					<td>不依赖图片，wording随时更换</td>
-				</tr>
-				<tr>
-					<td>受限于客户端自带字体，通常使用安全字体或用图片</td>
-					<td>支持加载任何意字体</td>
-				</tr>
-				<tr>
-					<td>微调字体样式依赖设计师出图</td>
-					<td>可随时调整阴影，加粗</td>
-				</tr>
-				<tr>
-					<td>使用图片实现，放大后模糊</td>
-					<td>放大后文字依然锐利</td>
-				</tr>				
-			</tbody>
-				
-			</table>
-			<q style="font-size: 1em;text-align: center;">@font-face加载了真正的字体，变更字体如今非常灵活</q>
+			<header>使用存储和文件API的Demo photowall</header>
+			<iframe style="width:100%;" class="demo-frame" frameborder="0" src="http://cloud.eggcanfly.net:3002/user"></iframe>
+		</div>
+		<div class="step slide">
+			<h2>存储API</h2>
+			<p>传统Http缓存兼容性高，但在移动端显疲态</p>
+			<ul style="margin:1em;" class="trend">
+				<li>发送额外Http请求，费资源</li>
+				<li>离线即报废</li>
+				<li>缓存数据到cookie力不从心</li>
+			</ul>
+		</div>
+		<div class="step slide">
+			<p>HTML5的离线存储和本地存储应运而生</p>
+			<ul style="margin:1em;" class="trend">
+				<li><mark>本地存储</mark>大容量版cookie，存取不需要发送Http请求</li>
+				<li><mark>离线存储</mark>适合离线场景应用，如内嵌客户端</li>
+			</ul>
 			
+			<p class="z-a">本地存储配合Http缓存，已广泛应用到<b>勋章墙</b>和<b>活动页面</b>，勋章墙的缓存命中率在10-15%左右。</p>
+			<!--<p class="z-a">photowall使用了http缓存 + 本地存储</p>-->
+		</div>
+
+		<div class="step slide">
+			<h2>photowall - 上传的困境</h2>
+			<progress max=100 value=60></progress>
+			<p class="cc-desc">照片大？<p>
+			<p class="cc-desc">弱网络？</p>
+			<p class="cc-desc">频繁断线？</p>
 		</div>
 		<div class="step slide">
-
-			<h2>WebGL和SVG跨平台图表</h2>
-			<table class="tb-list">
-			<thead>
-				<th>以往</th>
-				<th>现在</th>				
-			</thead>
-			<tbody>
-				<tr>
-					<td>实现无法跨平台或依赖Flash</td>
-					<td>实现基于Web标准，天然跨平台</td>
-				</tr>
-				<tr>
-					<td>调整图表需要更新客户端费时费力</td>
-					<td>调整图表只需服务端发布</td>
-				</tr>
-							
-			</tbody>
-				
-			</table>
-			<q style="font-size: 1em;text-align: center;">基于WebGL和SVG实现的图表不仅拥有跨平台特性，借助现在先进的浏览器，表现力已大大增强</q>			
-		</div>
-	    <div class="step slide">
-	        <h2>Web上绘制3D图表</h2>
-		 <iframe  style="width: 100%;height: 85%;" id="chartFrame" src="/echartx/example/map3d_population3.html"></iframe>
-	    </div>
-		<div class="step slide zhongli">
-			<h2>重力感应- <span class="font-green">年会摇一摇拜年</span></h2>
-			<iframe src="http://hd.3g.qq.com/g/bainian/index.html" class="demo-frame" frameborder="0" scrolling="no"></iframe>
-			<div style="float:right;width: 50%;">可以获取手机所处的角度、方位和朝向。<br /><br /><br />
-				<div class="binbintitle">应用场景：手机浏览器</div>
-				<div class="binbintitle">支持情况：良好，主流的手机都支持</div>
-				<div class="binbintitle">这个案例的开发时间：1天</div></div>
-		</div>
-		<div class="step slide">
-			<h2>打飞机双人版</h2>
-			<iframe src="http://philgong.kf0309.3g.qq.com/g/imgclean/dafeiji/index.jsp" class="demo-frame" frameborder="0" scrolling="no"></iframe>
-			<div style="float:right;width: 55%;">
-				<div class="fs22">两个物体之间碰撞检测</div>
-				<table class="tb-list feijitable">
-					<tbody><tr>
-						<td width="70"></td>
-						<td>不规则图形</td>
-						<td>浏览器支持情况</td>
-					</tr>
-					<tr>
-						<th>canvas</th>
-						<td>支持</td>
-						<td><span class="tableSpan">pc：ie678以外的浏览器都支持<br />手机：基本都支持</span></td>
-					</tr>
-					<tr>
-						<th>div</th>
-						<td>只支持矩形</td>
-						<td>所有浏览器均支持</td>
-					</tr>
-					</tbody></table>
-
-				<img class="gzhewm" style="display: block;width: 100%;" src="css/images/pengzhuang.png" />　　
-
+			<h2>photowall - 使用FileAPI和Canvas先压缩再上传,进度条再见</h2>
+			<div style="border-bottom: 1px gray solid">
+				<div class="compress before">压缩前<br/>-。-|||</div>
+				<div class="compress after">压缩后:-)</div>
 			</div>
-		</div>
-		<div class="step slide">
-			<h2>刮刮卡<span class="font-green">画布 + 图像处理</span></h2>
-			<iframe src="http://www.liveapp.cn/auto/index/39049?channel=1&weixin.qq.com=#wechat_webview_type=1" class="demo-frame" frameborder="0" scrolling="no"></iframe>
-			<div style="float:right;width: 50%;">检测用户手指触摸屏幕图像位置的像素透明度设成0<br /><br /><br />
-				<div class="binbintitle">支持情况：几乎全部手机都支持</div>
-				<div class="binbintitle">这个案例的开发时间：1天</div></div>
+			<p class="cc-desc">2-3M的照片可以压缩到<b>150K</b>以下（适合移动网络下数据传输）</p>
+			<p class="cc-desc">可断点续传和秒传</p>
 		</div>
 		<div class="step slide chat chat-1">
-			<h2>WebSocket 实例</h2>
+			<h2>WebSocket</h2>
 			<iframe src="http://chat.tangchanglin.com/chat.php" width="350" height="550" ></iframe>
 			<div class="content-right">
 				<h3 >聊天室，基于WebSocket进行实时通信的经典应用场景</h3>
@@ -288,7 +164,7 @@
 		<div class="step slide chat chat-2">
 			<h2>WebSocket应用场景</h2>
 			<div class="content">
-				<p >我们可以用来干什么？</p>
+				<p >WebSokcet可以干什么？</p>
 				<ul >
 					<li>
 						多媒体聊天：聊天室、在线客服
@@ -299,17 +175,14 @@
 						<p><img alt="" src="css/images/tom-chat2-02.png" /></p>
 					</li>
 					<li>
-						数据实时监控：反观镜全景视图、股票基金 
+						数据实时监控：反观光全景视图、股票基金 
 						<p><img alt="" src="css/images/tom-chat2-03.png" /></p>
 					</li>
 					<li>
 						多屏互动：活动推广（<a href="http://zt.qq.com/act/hdz/index.htm" target="_blank">《斗战诛天》）</a>
 						<p><img alt="" src="css/images/tom-chat2-04.png" /></p>
 					</li>
-					<li>
-						.......
-						<p></p>
-					</li>
+					
 				</ul>
 				<p class="imgList"><img alt="" src="css/images/chat-screen-voice.png" ><img alt="" src="css/images/tom-chat2-02.png" /><img alt="" src="css/images/tom-chat2-03.png" /></p>
 			</div>
@@ -383,42 +256,115 @@
 			</div>
 			<div id="qr-wrap" ><img alt="" src="" ></div>
 		</div>
-	    <div class="step slide">
-	        <h2>H5能力扩展 - 微信JS-SDK</h2>
-	        <h3>1、分享接口</h3>
-	        <h3>2、图像接口</h3>
-	        <h3>3、音频接口</h3>
-	        <h3>4、智能接口</h3>
-	        <h3>5、设备信息</h3>
-	        <h3>6、地理位置</h3>
-	        <h3>7、界面操作</h3>
-	        <h3>8、微信扫一扫</h3>
-	        <h3>9、微信小店</h3>
-	        <h3>10、微信卡券</h3>
-	        <h3>11、微信支付</h3>
-	        <img src="css/images/2015.jpg" alt="" class="wx-img">
+		<!--
+		<div class="step slide">
+                <h2><a id="reloadRocketFrame" style="cursor: pointer">年会小火箭</a>-<span class="font-green">CSS3动画+自定义字体</span></h2>
+	
+            <iframe style="width: 100%;height: 85%;" id="rocketFrame" src="http://cloud.eggcanfly.net:3000/counter.html"></iframe>
 	    </div>
-		<div class="step slide">
-			<h2>H5能力扩展 - 微信JS-SDK</h2>
-			<img src="css/images/bjx.png" style="width:40%;margin-right: 10%;" alt="" class="">
-		</div>
-		<div class="step slide">
-			<h2>H5能力扩展 - 微信JS-SDK</h2>
-			<img src="css/images/IMG_0012.jpg" style="width:80%;margin-right: 10%;" alt="" class="">
-		</div>
-		<div class="step slide">
-			<h2>H5能力扩展 - 微信JS-SDK</h2>
-			<img src="css/images/taxi.png" style="width:40%;margin-right: 10%;" alt="" class="">
-			<img src="css/images/qb.png" style="width:40%" alt="" class="">
+	    -->
+	    <div class="step slide">
+			<header>终端</header>
+			<q><mark>WebGL</mark>、<mark>Canvas画布</mark>、<mark>@Font-face</mark>、<mark>地理定位</mark>和<mark>传感器</mark>等新技术刮起的旋风代表未来网页的方向</q>
+	    </div>
+	    <div class="step slide">
+			<div style="z-index: 10;position: absolute;margin: 1em;left: 0;background: rgba(0, 0, 0, 0.72);padding: 1em;">
+				<p>业界已有基于WebGL的3D引擎:Cocos-2d-js, three.js,开发门槛降低</p>
+				<p>不借助插件即可实现复杂的3D效果</p>
+				<p>跨平台：IOS8 safari，Android，Chrome等支持</p>
+				<br/>
+				<q>典型场景：数据可视化，街景地图</q>
+				<q style="font-size: 1em;text-align: center;">基于WebGL实现的3D图表不仅表现力已大大增强,还拥有跨平台特性</q>		
+  			</div>		
+			<iframe  style="position: absolute;width: 100%;height: 100%;left:0;top:0;" id="chartFrame" src="/echartx/example/map3d_population3.html"></iframe>
 		</div>
 	    <div class="step slide">
-	        <h2>H5给设计师带来的改变</h2>
-	        <div class="center">
-		        <img src="css/images/media.jpg" alt="">
-				<iframe style="width: 100%;height: 55%;" src="http://ianlunn.github.io/Hover/"></iframe>
+	    	<h2>想100%还原设计稿中的文字？</h2>
+			<section>
+				<img src="css/images/cool.png" style="width: 100%;">
+				
+				<p>吃字体的亏，上wording的当，最后死在切图上。<p>
+			</section>  
+			
+		</div>
+		<div class="step slide">
+
+			<h2>@font-face技术助力还原字体</h2>
+			<section ><input class="font-demo font-1" value="cool" id='font-cool'></input></section>  
+			<div style="position:fixed;bottom:1em;">
+				<q style="font-size: 1em;text-align: center;">自从有了@font-face，刘爷腰不酸了腿也不疼了</q>
+				<input id="fontColor" type="color"/> 
+				<a class="changeFont font-1">换字体</a>			
+				<a class="changeFontClass font-bold" data-class="font-bold">加粗</a>		
+				<a class="changeFontClass font-capitalize" data-class="font-capitalize">首字大写</a>
+				<input value="12" min="1" max="12" type="range" class="changeFontSize"/>		
+			</div>					
+		</div>
+		<div class="step slide">
+			<h2>Canvas画布 - 打飞机双人版</h2>
+			<iframe src="http://philgong.kf0309.3g.qq.com/g/imgclean/dafeiji/index.jsp" class="demo-frame" frameborder="0" scrolling="no"></iframe>
+			<div style="float:right;width: 55%;">
+				<div class="fs22">两个物体之间碰撞检测</div>
+				<table class="tb-list feijitable">
+					<tbody><tr>
+						<td width="70"></td>
+						<td>不规则图形</td>
+						<td>浏览器支持情况</td>
+					</tr>
+					<tr>
+						<th>canvas</th>
+						<td>支持</td>
+						<td><span class="tableSpan">pc：ie678以外的浏览器都支持<br />手机：基本都支持</span></td>
+					</tr>
+					<tr>
+						<th>div</th>
+						<td>只支持矩形</td>
+						<td>所有浏览器均支持</td>
+					</tr>
+					</tbody></table>
+
+				<img class="gzhewm" style="display: block;width: 100%;" src="css/images/pengzhuang.png" />　　
 			</div>
 		</div>
-	    
+		<div class="step slide">
+			<header>地理定位</header>
+			<img src="css/images/taxi.png" style="width:40%;display: inline-flex;margin-right: 10%;" alt="" class="">
+			<iframe src="http://map.qq.com/m/index/map" style="width:40%;display: inline-flex;height:100%;" ></iframe>
+			
+		</div>
+		<!--
+		<div class="step slide">
+			<h2>刮刮卡<span class="font-green">画布 + 图像处理</span></h2>
+			<iframe src="http://www.liveapp.cn/auto/index/39049?channel=1&weixin.qq.com=#wechat_webview_type=1" class="demo-frame" frameborder="0" scrolling="no"></iframe>
+			<div style="float:right;width: 50%;">检测用户手指触摸屏幕图像位置的像素透明度设成0<br /><br /><br />
+				<div class="binbintitle">支持情况：几乎全部手机都支持</div>
+				<div class="binbintitle">这个案例的开发时间：1天</div></div>
+		</div>
+		-->
+		<div class="step slide zhongli">
+			<h2>传感器 - <span class="font-green">年会摇一摇拜年</span></h2>
+			<iframe src="http://hd.3g.qq.com/g/bainian/index.html" class="demo-frame" frameborder="0" scrolling="no"></iframe>
+			<div style="float:right;width: 50%;">利用HTML5的传感器API DeviceOrientation事件得到运动和方向传感器数据，实现摇一摇动作的检测<br /><br /><br />
+				<div class="binbintitle">应用场景：手机浏览器</div>
+				<div class="binbintitle">支持情况：主流的手机都支持</div>
+				<div class="binbintitle">HTML5尚未定稿的部分还包括支持其他传感器（温度、气压、湿度、光线、声音、距离）</div></div>
+		</div>
+	    <div class="step slide sdk">
+	        <h2>Native + HTML5 = JS SDK</h2>
+	        <img class="wechatBg" src="css/images/wechat.png"></img>
+	        <h3>分享接口</h3>
+	        <h3>图像接口</h3>
+	        <h3>音频接口</h3>
+	        <h3>智能接口</h3>
+	        <h3>设备信息</h3>
+	        <h3>地理位置</h3>
+	        <h3>界面操作</h3>
+	        <h3>微信扫一扫</h3>
+	        <h3>微信小店</h3>
+	        <h3>微信卡券</h3>
+	        <h3>微信支付</h3>	        
+	    </div>
+	    <div id="overview" class="step" data-x="-200" data-y="-500" data-scale="3"></div>
 	</div>
 	<script src="js/jquery.js"></script>
 	<script src="js/impress.js"></script>
@@ -435,9 +381,59 @@
 		})
 		impress().init();
 
+		function resizePhotowallFrame(){
+			var ini = 0;
+			return function(){
+console.log(ini)
+				var width = $('#photowallFrame').css('width');
+				if(ini % 3 == 0){
+					width = '100%';
+				}else if(ini % 3 == 1){
+					width = '70%';
+				}else{
+					width = '40%';
+				}
+				$('#photowallFrame').css('width', width);
+				ini++;
+
+			};
+			
+		}
+
+		setInterval(resizePhotowallFrame(), 4000);
+
 		$('#reloadRocketFrame').click(function(){
 			$('#rocketFrame').attr('src', $('#rocketFrame').attr('src'));
 		});
+
+		function changeFontColor(){
+			$('#font-cool').css('color', this.value);
+		}
+
+		function changeFontClass(fontClass){
+			$('#font-cool').addClass(fontClass);
+		}
+
+		function changeFont(){
+			
+			$('#font-cool').toggleClass('font-1').toggleClass('font-2');	
+			
+		}
+
+		function changeFontSize(){
+			$('#font-cool').css('font-size', this.value + 'em');
+		}
+
+		$('.changeFontSize').change(changeFontSize);
+
+		$('.changeFontClass').click(function(){
+			changeFontClass($(this).data('class'));
+		});
+
+		$('.changeFont').click(changeFont);
+
+		$('#fontColor').change(changeFontColor);
+
 		$('.chart').click(function(){
 			$('#chartFrame').attr('src', $(this).data('href'));
 		});
@@ -477,11 +473,11 @@
 		});
 
 		var hashQrPage = {
-			'5': '/images/qr.png',
-			'8' : 	'css/images/rocket.png',
-			'10':'css/images/nianhui.png',
-			'11' : 'css/images/feiji.png',
-			'12' : 'css/images/guagua.png',
+			'8': '/images/qr.png',
+			'9999' : 	'css/images/rocket.png',
+			'22':'css/images/nianhui.png',
+			'20' : 'css/images/feiji.png',
+			'9998' : 'css/images/guagua.png',
 			'13' : 'css/images/chat-qr-room.png'
 
 		};
@@ -527,7 +523,7 @@
 			btn.removeClass('open-qr').removeAttr('style').css({
 				display: 'block'
 			});
-		}
+		}	
 
 		var socket = io();
 		//events
@@ -542,7 +538,7 @@
 		socket.on('slide control',function(data){
 
 			impress()[data.cmd].call()
-			impress()[data.cmd].call();
+			
 		});
 	</script>
 </body>
