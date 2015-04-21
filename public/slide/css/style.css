@@ -458,6 +458,12 @@ pre {
   margin: 0.5em;
   background: rgb(66, 66, 66);
 }
+.sdk .js-secondary{
+    margin:1em 0;
+}
+.sdk .js-secondary h3{
+    font-size: 0.5em;
+}
 /*magic*/
 
 

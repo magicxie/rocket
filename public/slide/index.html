@@ -8,12 +8,12 @@
 <body>
 	<div class="qr-btn"><img src="/images/qr.png"></div>
 	<div id="impress">
-		<div id="first" class="step slide">
-	        <img src="css/images/h5.png" class="h5logo" alt="">
-	        <div class="firstpage-title">
-	        	<q>站在HTML5的风口</q>
-	        </div>
-	    </div>
+        <div id="first" class="step" data-x="0" data-y="1000" data-rotate-x="90" data-scale="5" style="margin-top: -10%;">
+            <img src="css/images/h5.png" class="h5logo" alt="">
+            <div class="firstpage-title">
+                <q>站在HTML5的风口</q>
+            </div>
+        </div>
 	    <div class="step slide">
 			<header>HTML5吹的什么风</header>
 			<section>
@@ -349,23 +349,35 @@
 				<div class="binbintitle">支持情况：主流的手机都支持</div>
 				<div class="binbintitle">HTML5尚未定稿的部分还包括支持其他传感器（温度、气压、湿度、光线、声音、距离）</div></div>
 		</div>
+        <div class="step slide">
+            <h2>HTML5带来网页的进化，催生网页+原生的混合应用</h2>
+            <q>跨平台，降低适配成本</q>
+            <q>云端发布，降低发布成本</q>
+            <q>桥接原生API，快速生产原型</q>
+        </div>
 	    <div class="step slide sdk">
-	        <h2>Native + HTML5 = JS SDK</h2>
-	        <img class="wechatBg" src="css/images/wechat.png"></img>
-	        <h3>分享接口</h3>
-	        <h3>图像接口</h3>
-	        <h3>音频接口</h3>
-	        <h3>智能接口</h3>
-	        <h3>设备信息</h3>
-	        <h3>地理位置</h3>
-	        <h3>界面操作</h3>
-	        <h3>微信扫一扫</h3>
-	        <h3>微信小店</h3>
-	        <h3>微信卡券</h3>
-	        <h3>微信支付</h3>	        
+	        <h2>原生 + JavaScript = JS SDK</h2>
+	        <img class="wechatBg" src="css/images/wechat.png" />
+	        <div class="js-primary">
+                <h3>分享接口</h3>
+                <h3>图像接口</h3>
+                <h3>设备信息</h3>
+                <h3>微信支付</h3>
+                <h3>地理位置</h3>
+                <h3>微信扫一扫</h3>
+            </div>
+            <div class="js-secondary">
+                <h3>音频接口</h3>
+                <h3>智能接口</h3>
+                <h3>界面操作</h3>
+                <h3>微信小店</h3>
+                <h3>微信卡券</h3>
+            </div>
 	    </div>
-	    <div id="overview" class="step" data-x="-200" data-y="-500" data-scale="3"></div>
 	</div>
+    <footer style="position: fixed; bottom: 10px; left: 10px; pointer-events: auto;">
+           站在HTML5的风口
+    </footer>
 	<script src="js/jquery.js"></script>
 	<script src="js/impress.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
@@ -478,7 +490,8 @@ console.log(ini)
 			'22':'css/images/nianhui.png',
 			'20' : 'css/images/feiji.png',
 			'9998' : 'css/images/guagua.png',
-			'13' : 'css/images/chat-qr-room.png'
+			'13' : 'css/images/chat-qr-room.png',
+            '24' : 'css/images/sdk.png'
 
 		};
 		var btn = $('.qr-btn');
