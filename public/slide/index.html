@@ -349,31 +349,50 @@
 				<div class="binbintitle">支持情况：主流的手机都支持</div>
 				<div class="binbintitle">HTML5尚未定稿的部分还包括支持其他传感器（温度、气压、湿度、光线、声音、距离）</div></div>
 		</div>
+		<div class="step slide" id="dp">
+			<h2>大众点评网【年味地图】：结合大数据的实时推广</h2>
+			<img src="css/images/nianweiditu-image.png" alt="">
+		</div>
+		<div class="step slide" id="levis">
+			<h2>有个好故事，用H5快速讲给大家听</h2>
+			<img src="css/images/levis-image.png" alt="" style="height: 100%;">
+		</div>
         <div class="step slide">
             <h2>HTML5带来网页的进化，催生网页+原生的混合应用</h2>
             <q>跨平台，降低适配成本</q>
             <q>云端发布，降低发布成本</q>
             <q>桥接原生API，快速生产原型</q>
         </div>
-	    <div class="step slide sdk">
-	        <h2>原生 + JavaScript = JS SDK</h2>
-	        <img class="wechatBg" src="css/images/wechat.png" />
-	        <div class="js-primary">
-                <h3>分享接口</h3>
-                <h3>图像接口</h3>
-                <h3>设备信息</h3>
-                <h3>微信支付</h3>
-                <h3>地理位置</h3>
-                <h3>微信扫一扫</h3>
-            </div>
-            <div class="js-secondary">
-                <h3>音频接口</h3>
-                <h3>智能接口</h3>
-                <h3>界面操作</h3>
-                <h3>微信小店</h3>
-                <h3>微信卡券</h3>
-            </div>
-	    </div>
+		<div class="step slide sdk">
+			<h2>原生 + JavaScript = JS SDK</h2>
+			<img class="wechatBg" src="css/images/wechat.png" />
+			<div class="js-primary">
+				<h3>分享接口</h3>
+				<h3><a href="#image" class="a-sdk">图像接口</a></h3>
+				<h3><a href="#audio" class="a-sdk">音频接口</a></h3>
+				<h3>界面操作</h3>
+				<h3>地理位置</h3>
+				<h3>设备信息</h3>
+			</div>
+			<div class="js-secondary">
+				<h3>智能接口</h3>
+				<h3>微信支付</h3>
+				<h3>微信扫一扫</h3>
+				<h3>微信小店</h3>
+				<h3>微信卡券</h3>
+			</div>
+		</div>
+		<div class="step slide" id="image">
+			<h2>图像接口 - <span class="font-green">紧跟热点，利用话题</span></h2>
+			<img src="css/images/image-sdk-1.png" alt="">
+			<img src="css/images/image-sdk-2.png" alt="">
+			<img src="css/images/image-sdk-3.png" alt="" class="i-s-3">
+			<img src="css/images/image-sdk-4.png" alt="" class="i-s-4">
+		</div>
+		<div class="step slide" id="audio">
+			<h2>音频接口 - <span class="font-green">可口可乐的语音祝福</span></h2>
+			<img src="css/images/audio-sdk.png" alt="">
+		</div>
 	</div>
     <footer style="position: fixed; bottom: 10px; left: 10px; pointer-events: auto;">
            站在HTML5的风口
@@ -491,12 +510,22 @@ console.log(ini)
 			'20' : 'css/images/feiji.png',
 			'9998' : 'css/images/guagua.png',
 			'13' : 'css/images/chat-qr-room.png',
-            '24' : 'css/images/sdk.png'
+            '24' : 'css/images/sdk.png',
+			'dp':'css/images/nianweiditu.png',
+			'levis':'css/images/levis.png',
+			'image':'css/images/cos-image.png',
+			'audio':'css/images/audio-kele.png'
 
 		};
+
+
+		function getHashTag(){
+			return (location.hash.search('-') > 0) ? location.hash.split('-')[1] : location.hash.replace('#/','');
+		}
+
 		var btn = $('.qr-btn');
 		$(window).on('hashchange',function(e){
-			var page = location.hash.split('-')[1];
+			var page = getHashTag();
 			if(hashQrPage[page]){
 				btn.find('img').attr('src',hashQrPage[page]);
 				btn.fadeIn();
@@ -517,7 +546,7 @@ console.log(ini)
 		});
 
 		function showQr(){
-			var page = location.hash.split('-')[1];
+			var page = getHashTag();
 			var w = $(window),
 					ww = w.width(),
 					wh = w.height(),
@@ -553,6 +582,19 @@ console.log(ini)
 			impress()[data.cmd].call()
 			
 		});
+
+		//image-sdk
+		$('#image').on('click',function(){
+			$('.i-s-3').addClass('i-s-3-a');
+		});
+		$('.i-s-3').on('click',function(){
+
+			$('.i-s-4').css('z-index',10001);
+			setTimeout(function(){
+				$('.i-s-4').addClass('i-s-4-a');
+			},400);
+
+		})
 	</script>
 </body>
 </html>

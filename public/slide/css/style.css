@@ -329,6 +329,46 @@ strike{
     background: rgb(88, 157, 65);
     height: 35px;
 }
+
+.a-sdk{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+#image img{
+    width: 50%;
+    float: left;
+}
+.i-s-3,.i-s-4{
+    position: absolute;
+    left: 50%;
+    margin-left: -320px;
+    width: 640px!important;
+    top: -200px;
+    opacity: 0;
+    -webkit-transition: all .5s;
+}
+.i-s-3-a{
+    opacity: 1;
+    top: 0;
+    z-index: 10000;
+}
+.i-s-4{
+    top: 0;
+}
+.i-s-4-a{
+    opacity: 1;
+}
+#audio img{
+    position: absolute;
+    left: 0;
+    height: 72%;
+}
+#dp img{
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
 /*derrick*/
 
 
